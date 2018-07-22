@@ -1,0 +1,520 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>tushare.futures package &mdash; HandyPython 0.1 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="tushare.internet package" href="tushare.internet.html" />
+    <link rel="prev" title="tushare.fund package" href="tushare.fund.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> HandyPython
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../hello.html">序言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../beginning/index.html">入门</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="tushare.html">tushare package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="tushare.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="tushare.bond.html">tushare.bond package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.coins.html">tushare.coins package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.data.html">tushare.data package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.fund.html">tushare.fund package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">tushare.futures package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tushare.futures.cons">tushare.futures.cons module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tushare.futures.domestic">tushare.futures.domestic module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tushare.futures.domestic_cons">tushare.futures.domestic_cons module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tushare.futures.intlfutures">tushare.futures.intlfutures module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tushare.futures">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.internet.html">tushare.internet package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.stock.html">tushare.stock package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.trader.html">tushare.trader package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.util.html">tushare.util package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tushare.html#module-tushare">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">HandyPython</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="tushare.html">tushare package</a> &raquo;</li>
+        
+      <li>tushare.futures package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/tushare/tushare.futures.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tushare-futures-package">
+<h1>tushare.futures package<a class="headerlink" href="#tushare-futures-package" title="永久链接至标题">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="module-tushare.futures.cons">
+<span id="tushare-futures-cons-module"></span><h2>tushare.futures.cons module<a class="headerlink" href="#module-tushare.futures.cons" title="永久链接至标题">¶</a></h2>
+<p>Created on 2016年10月17日
+&#64;author: Jimmy Liu
+&#64;group : waditu
+&#64;contact: <a class="reference external" href="mailto:jimmysoa&#37;&#52;&#48;sina&#46;cn">jimmysoa<span>&#64;</span>sina<span>&#46;</span>cn</a></p>
+</div>
+<div class="section" id="module-tushare.futures.domestic">
+<span id="tushare-futures-domestic-module"></span><h2>tushare.futures.domestic module<a class="headerlink" href="#module-tushare.futures.domestic" title="永久链接至标题">¶</a></h2>
+<p>Created on 2017年06月04日
+&#64;author: debugo
+&#64;contact: <a class="reference external" href="mailto:me&#37;&#52;&#48;debugo&#46;com">me<span>&#64;</span>debugo<span>&#46;</span>com</a></p>
+<dl class="function">
+<dt id="tushare.futures.domestic.get_cffex_daily">
+<code class="descclassname">tushare.futures.domestic.</code><code class="descname">get_cffex_daily</code><span class="sig-paren">(</span><em>date=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.futures.domestic.get_cffex_daily" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取中金所日交易数据</div></blockquote>
+<blockquote>
+<div>date: 日期 format：YYYY-MM-DD 或 YYYYMMDD 或 datetime.date对象 为空时为当天</div></blockquote>
+<blockquote>
+<div><dl class="docutils">
+<dt>DataFrame</dt>
+<dd><dl class="first last docutils">
+<dt>中金所日交易数据(DataFrame):</dt>
+<dd>symbol        合约代码
+date          日期
+open          开盘价
+high          最高价
+low          最低价
+close         收盘价
+volume        成交量
+open_interest   持仓量
+turnover      成交额
+settle        结算价
+pre_settle    前结算价
+variety       合约类别</dd>
+</dl>
+</dd>
+</dl>
+<p>或 None(给定日期没有交易数据)</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.futures.domestic.get_czce_daily">
+<code class="descclassname">tushare.futures.domestic.</code><code class="descname">get_czce_daily</code><span class="sig-paren">(</span><em>date=None</em>, <em>type='future'</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.futures.domestic.get_czce_daily" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取郑商所日交易数据</div></blockquote>
+<blockquote>
+<div>date: 日期 format：YYYY-MM-DD 或 YYYYMMDD 或 datetime.date对象 为空时为当天
+type: 数据类型, 为’future’期货 或 ‘option’期权二者之一</div></blockquote>
+<blockquote>
+<div><dl class="docutils">
+<dt>DataFrame</dt>
+<dd><dl class="first last docutils">
+<dt>郑商所每日期货交易数据:</dt>
+<dd>symbol        合约代码
+date          日期
+open          开盘价
+high          最高价
+low           最低价
+close         收盘价
+volume        成交量
+open_interest 持仓量
+turnover      成交额
+settle        结算价
+pre_settle    前结算价
+variety       合约类别</dd>
+</dl>
+</dd>
+</dl>
+<p>或 
+DataFrame</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>郑商所每日期权交易数据</dt>
+<dd>symbol        合约代码
+date          日期
+open          开盘价
+high          最高价
+low           最低价
+close         收盘价
+pre_settle      前结算价
+settle         结算价
+delta          对冲值  
+volume         成交量
+open_interest     持仓量
+oi_change       持仓变化
+turnover        成交额
+implied_volatility 隐含波动率
+exercise_volume   行权量
+variety        合约类别</dd>
+</dl>
+</div></blockquote>
+<p>None(类型错误或给定日期没有交易数据)</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.futures.domestic.get_dce_daily">
+<code class="descclassname">tushare.futures.domestic.</code><code class="descname">get_dce_daily</code><span class="sig-paren">(</span><em>date=None</em>, <em>type='future'</em>, <em>retries=0</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.futures.domestic.get_dce_daily" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取大连商品交易所日交易数据</div></blockquote>
+<blockquote>
+<div>date: 日期 format：YYYY-MM-DD 或 YYYYMMDD 或 datetime.date对象 为空时为当天
+type: 数据类型, 为’future’期货 或 ‘option’期权二者之一
+retries: int, 当前重试次数，达到3次则获取数据失败</div></blockquote>
+<blockquote>
+<div><dl class="docutils">
+<dt>DataFrame</dt>
+<dd><dl class="first last docutils">
+<dt>大商所日交易数据(DataFrame):</dt>
+<dd>symbol        合约代码
+date          日期
+open          开盘价
+high          最高价
+low           最低价
+close         收盘价
+volume        成交量
+open_interest   持仓量
+turnover       成交额
+settle        结算价
+pre_settle    前结算价
+variety       合约类别</dd>
+</dl>
+</dd>
+</dl>
+<p>或 
+DataFrame</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>郑商所每日期权交易数据</dt>
+<dd>symbol        合约代码
+date          日期
+open          开盘价
+high          最高价
+low           最低价
+close         收盘价
+pre_settle      前结算价
+settle         结算价
+delta          对冲值  
+volume         成交量
+open_interest     持仓量
+oi_change       持仓变化
+turnover        成交额
+implied_volatility 隐含波动率
+exercise_volume   行权量
+variety        合约类别</dd>
+</dl>
+</div></blockquote>
+<p>或 None(给定日期没有交易数据)</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.futures.domestic.get_future_daily">
+<code class="descclassname">tushare.futures.domestic.</code><code class="descname">get_future_daily</code><span class="sig-paren">(</span><em>start=None</em>, <em>end=None</em>, <em>market='CFFEX'</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.futures.domestic.get_future_daily" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取中金所日交易数据</div></blockquote>
+<blockquote>
+<div>start: 开始日期 format：YYYY-MM-DD 或 YYYYMMDD 或 datetime.date对象 为空时为当天
+end: 结束数据 format：YYYY-MM-DD 或 YYYYMMDD 或 datetime.date对象 为空时为当天
+market: ‘CFFEX’ 中金所, ‘CZCE’ 郑商所,  ‘SHFE’ 上期所, ‘DCE’ 大商所 之一。默认为中金所</div></blockquote>
+<blockquote>
+<div><dl class="docutils">
+<dt>DataFrame</dt>
+<dd><dl class="first last docutils">
+<dt>中金所日交易数据(DataFrame):</dt>
+<dd>symbol      合约代码
+date       日期
+open       开盘价
+high       最高价
+low       最低价
+close      收盘价
+volume      成交量
+open_interest 持仓量
+turnover    成交额
+settle     结算价
+pre_settle   前结算价
+variety     合约类别</dd>
+</dl>
+</dd>
+</dl>
+<p>或 None(给定日期没有交易数据)</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.futures.domestic.get_shfe_daily">
+<code class="descclassname">tushare.futures.domestic.</code><code class="descname">get_shfe_daily</code><span class="sig-paren">(</span><em>date=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.futures.domestic.get_shfe_daily" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取上期所日交易数据</div></blockquote>
+<blockquote>
+<div>date: 日期 format：YYYY-MM-DD 或 YYYYMMDD 或 datetime.date对象 为空时为当天</div></blockquote>
+<blockquote>
+<div><dl class="docutils">
+<dt>DataFrame</dt>
+<dd><dl class="first last docutils">
+<dt>上期所日交易数据(DataFrame):</dt>
+<dd>symbol        合约代码
+date          日期
+open          开盘价
+high          最高价
+low           最低价
+close         收盘价
+volume        成交量
+open_interest 持仓量
+turnover      成交额
+settle        结算价
+pre_settle     前结算价
+variety       合约类别</dd>
+</dl>
+</dd>
+</dl>
+<p>或 None(给定日期没有交易数据)</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.futures.domestic.get_shfe_vwap">
+<code class="descclassname">tushare.futures.domestic.</code><code class="descname">get_shfe_vwap</code><span class="sig-paren">(</span><em>date=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.futures.domestic.get_shfe_vwap" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取上期所日成交均价数据</div></blockquote>
+<blockquote>
+<div>date: 日期 format：YYYY-MM-DD 或 YYYYMMDD 或 datetime.date对象 为空时为当天</div></blockquote>
+<blockquote>
+<div><dl class="docutils">
+<dt>DataFrame</dt>
+<dd><dl class="first last docutils">
+<dt>郑商所日交易数据(DataFrame):</dt>
+<dd>symbol        合约代码
+date          日期
+time_range    vwap时段，分09:00-10:15和09:00-15:00两类
+vwap          加权平均成交均价</dd>
+</dl>
+</dd>
+</dl>
+<p>或 None(给定日期没有数据)</p>
+</div></blockquote>
+</dd></dl>
+
+</div>
+<div class="section" id="module-tushare.futures.domestic_cons">
+<span id="tushare-futures-domestic-cons-module"></span><h2>tushare.futures.domestic_cons module<a class="headerlink" href="#module-tushare.futures.domestic_cons" title="永久链接至标题">¶</a></h2>
+<p>Created on 2017年06月04日
+&#64;author: debugo
+&#64;contact: <a class="reference external" href="mailto:me&#37;&#52;&#48;debugo&#46;com">me<span>&#64;</span>debugo<span>&#46;</span>com</a></p>
+<dl class="function">
+<dt id="tushare.futures.domestic_cons.convert_date">
+<code class="descclassname">tushare.futures.domestic_cons.</code><code class="descname">convert_date</code><span class="sig-paren">(</span><em>date</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.futures.domestic_cons.convert_date" title="永久链接至目标">¶</a></dt>
+<dd><p>transform a date string to datetime.date object.
+:param day, string, e.g. 2016-01-01, 20160101 or 2016/01/01
+:return: object of datetime.date(such as 2016-01-01) or None</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-tushare.futures.intlfutures">
+<span id="tushare-futures-intlfutures-module"></span><h2>tushare.futures.intlfutures module<a class="headerlink" href="#module-tushare.futures.intlfutures" title="永久链接至标题">¶</a></h2>
+<p>国际期货
+Created on 2016/10/01
+&#64;author: Jimmy Liu
+&#64;group : waditu
+&#64;contact: <a class="reference external" href="mailto:jimmysoa&#37;&#52;&#48;sina&#46;cn">jimmysoa<span>&#64;</span>sina<span>&#46;</span>cn</a></p>
+<dl class="function">
+<dt id="tushare.futures.intlfutures.get_intlfuture">
+<code class="descclassname">tushare.futures.intlfutures.</code><code class="descname">get_intlfuture</code><span class="sig-paren">(</span><em>symbols=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.futures.intlfutures.get_intlfuture" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-tushare.futures">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-tushare.futures" title="永久链接至标题">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tushare.internet.html" class="btn btn-neutral float-right" title="tushare.internet package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tushare.fund.html" class="btn btn-neutral" title="tushare.fund package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, zeping.Long.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'zh_CN',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

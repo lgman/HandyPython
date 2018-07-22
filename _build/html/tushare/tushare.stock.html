@@ -1,0 +1,2120 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>tushare.stock package &mdash; HandyPython 0.1 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="tushare.trader package" href="tushare.trader.html" />
+    <link rel="prev" title="tushare.internet package" href="tushare.internet.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> HandyPython
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../hello.html">序言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../beginning/index.html">入门</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="tushare.html">tushare package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="tushare.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="tushare.bond.html">tushare.bond package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.coins.html">tushare.coins package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.data.html">tushare.data package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.fund.html">tushare.fund package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.futures.html">tushare.futures package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.internet.html">tushare.internet package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">tushare.stock package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tushare.stock.billboard">tushare.stock.billboard module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tushare.stock.classifying">tushare.stock.classifying module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tushare.stock.cons">tushare.stock.cons module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tushare.stock.fundamental">tushare.stock.fundamental module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tushare.stock.globals">tushare.stock.globals module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tushare.stock.macro">tushare.stock.macro module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tushare.stock.macro_vars">tushare.stock.macro_vars module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tushare.stock.minsdata">tushare.stock.minsdata module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tushare.stock.news_vars">tushare.stock.news_vars module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tushare.stock.newsevent">tushare.stock.newsevent module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tushare.stock.ref_vars">tushare.stock.ref_vars module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tushare.stock.reference">tushare.stock.reference module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tushare.stock.shibor">tushare.stock.shibor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tushare.stock.trading">tushare.stock.trading module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tushare.stock">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.trader.html">tushare.trader package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.util.html">tushare.util package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tushare.html#module-tushare">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">HandyPython</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="tushare.html">tushare package</a> &raquo;</li>
+        
+      <li>tushare.stock package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/tushare/tushare.stock.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tushare-stock-package">
+<h1>tushare.stock package<a class="headerlink" href="#tushare-stock-package" title="永久链接至标题">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="module-tushare.stock.billboard">
+<span id="tushare-stock-billboard-module"></span><h2>tushare.stock.billboard module<a class="headerlink" href="#module-tushare.stock.billboard" title="永久链接至标题">¶</a></h2>
+<p>龙虎榜数据
+Created on 2015年6月10日
+&#64;author: Jimmy Liu
+&#64;group : waditu
+&#64;contact: <a class="reference external" href="mailto:jimmysoa&#37;&#52;&#48;sina&#46;cn">jimmysoa<span>&#64;</span>sina<span>&#46;</span>cn</a></p>
+<dl class="function">
+<dt id="tushare.stock.billboard.broker_tops">
+<code class="descclassname">tushare.stock.billboard.</code><code class="descname">broker_tops</code><span class="sig-paren">(</span><em>days=5</em>, <em>retry_count=3</em>, <em>pause=0.001</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.billboard.broker_tops" title="永久链接至目标">¶</a></dt>
+<dd><p>获取营业部上榜统计数据
+Parameters
+——–
+days:int</p>
+<blockquote>
+<div>天数，统计n天以来上榜次数，默认为5天，其余是10、30、60</div></blockquote>
+<dl class="docutils">
+<dt>retry_count <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 3</span></dt>
+<dd>如遇网络等问题重复执行的次数</dd>
+<dt>pause <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 0</span></dt>
+<dd>重复请求数据过程中暂停的秒数，防止请求间隔时间太短出现的问题</dd>
+</dl>
+<p>broker：营业部名称
+count：上榜次数
+bamount：累积购买额(万)
+bcount：买入席位数
+samount：累积卖出额(万)
+scount：卖出席位数
+top3：买入前三股票</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.billboard.cap_tops">
+<code class="descclassname">tushare.stock.billboard.</code><code class="descname">cap_tops</code><span class="sig-paren">(</span><em>days=5</em>, <em>retry_count=3</em>, <em>pause=0.001</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.billboard.cap_tops" title="永久链接至目标">¶</a></dt>
+<dd><p>获取个股上榜统计数据
+Parameters
+——–</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>days:int</dt>
+<dd>天数，统计n天以来上榜次数，默认为5天，其余是10、30、60</dd>
+<dt>retry_count <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 3</span></dt>
+<dd>如遇网络等问题重复执行的次数</dd>
+<dt>pause <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 0</span></dt>
+<dd>重复请求数据过程中暂停的秒数，防止请求间隔时间太短出现的问题</dd>
+</dl>
+</div></blockquote>
+<dl class="docutils">
+<dt>DataFrame</dt>
+<dd>code：代码
+name：名称
+count：上榜次数
+bamount：累积购买额(万)     
+samount：累积卖出额(万)
+net：净额(万)
+bcount：买入席位数
+scount：卖出席位数</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.billboard.inst_detail">
+<code class="descclassname">tushare.stock.billboard.</code><code class="descname">inst_detail</code><span class="sig-paren">(</span><em>retry_count=3</em>, <em>pause=0.001</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.billboard.inst_detail" title="永久链接至目标">¶</a></dt>
+<dd><p>获取最近一个交易日机构席位成交明细统计数据
+Parameters
+——–
+retry_count : int, 默认 3</p>
+<blockquote>
+<div>如遇网络等问题重复执行的次数</div></blockquote>
+<dl class="docutils">
+<dt>pause <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 0</span></dt>
+<dd>重复请求数据过程中暂停的秒数，防止请求间隔时间太短出现的问题</dd>
+</dl>
+<p>code:股票代码
+name:股票名称     
+date:交易日期     
+bamount:机构席位买入额(万)     
+samount:机构席位卖出额(万)     
+type:类型</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.billboard.inst_tops">
+<code class="descclassname">tushare.stock.billboard.</code><code class="descname">inst_tops</code><span class="sig-paren">(</span><em>days=5</em>, <em>retry_count=3</em>, <em>pause=0.001</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.billboard.inst_tops" title="永久链接至目标">¶</a></dt>
+<dd><p>获取机构席位追踪统计数据
+Parameters
+——–
+days:int</p>
+<blockquote>
+<div>天数，统计n天以来上榜次数，默认为5天，其余是10、30、60</div></blockquote>
+<dl class="docutils">
+<dt>retry_count <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 3</span></dt>
+<dd>如遇网络等问题重复执行的次数</dd>
+<dt>pause <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 0</span></dt>
+<dd>重复请求数据过程中暂停的秒数，防止请求间隔时间太短出现的问题</dd>
+</dl>
+<p>code:代码
+name:名称
+bamount:累积买入额(万)
+bcount:买入次数
+samount:累积卖出额(万)
+scount:卖出次数
+net:净额(万)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.billboard.top_list">
+<code class="descclassname">tushare.stock.billboard.</code><code class="descname">top_list</code><span class="sig-paren">(</span><em>date=None</em>, <em>retry_count=3</em>, <em>pause=0.001</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.billboard.top_list" title="永久链接至目标">¶</a></dt>
+<dd><p>获取每日龙虎榜列表
+Parameters
+——–
+date:string</p>
+<blockquote>
+<div>明细数据日期 format：YYYY-MM-DD 如果为空，返回最近一个交易日的数据</div></blockquote>
+<dl class="docutils">
+<dt>retry_count <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 3</span></dt>
+<dd>如遇网络等问题重复执行的次数</dd>
+<dt>pause <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 0</span></dt>
+<dd>重复请求数据过程中暂停的秒数，防止请求间隔时间太短出现的问题</dd>
+</dl>
+<dl class="docutils">
+<dt>DataFrame</dt>
+<dd>code：代码
+name ：名称
+pchange：涨跌幅     
+amount：龙虎榜成交额(万)
+buy：买入额(万)
+bratio：占总成交比例
+sell：卖出额(万)
+sratio ：占总成交比例
+reason：上榜原因
+date  ：日期</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-tushare.stock.classifying">
+<span id="tushare-stock-classifying-module"></span><h2>tushare.stock.classifying module<a class="headerlink" href="#module-tushare.stock.classifying" title="永久链接至标题">¶</a></h2>
+<p>获取股票分类数据接口 
+Created on 2015/02/01
+&#64;author: Jimmy Liu
+&#64;group : waditu
+&#64;contact: <a class="reference external" href="mailto:jimmysoa&#37;&#52;&#48;sina&#46;cn">jimmysoa<span>&#64;</span>sina<span>&#46;</span>cn</a></p>
+<dl class="function">
+<dt id="tushare.stock.classifying.concetps">
+<code class="descclassname">tushare.stock.classifying.</code><code class="descname">concetps</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.classifying.concetps" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.classifying.get_area_classified">
+<code class="descclassname">tushare.stock.classifying.</code><code class="descname">get_area_classified</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.classifying.get_area_classified" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取地域分类数据</div></blockquote>
+<dl class="docutils">
+<dt>DataFrame</dt>
+<dd>code :股票代码
+name :股票名称
+area :地域名称</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.classifying.get_concept_classified">
+<code class="descclassname">tushare.stock.classifying.</code><code class="descname">get_concept_classified</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.classifying.get_concept_classified" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取概念分类数据</div></blockquote>
+<dl class="docutils">
+<dt>DataFrame</dt>
+<dd>code :股票代码
+name :股票名称
+c_name :概念名称</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.classifying.get_concepts">
+<code class="descclassname">tushare.stock.classifying.</code><code class="descname">get_concepts</code><span class="sig-paren">(</span><em>src='dfcf'</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.classifying.get_concepts" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取概念板块行情数据</div></blockquote>
+<dl class="docutils">
+<dt>DataFrame</dt>
+<dd>code :股票代码
+name :股票名称
+c_name :概念名称</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.classifying.get_gem_classified">
+<code class="descclassname">tushare.stock.classifying.</code><code class="descname">get_gem_classified</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.classifying.get_gem_classified" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取创业板股票</div></blockquote>
+<dl class="docutils">
+<dt>DataFrame</dt>
+<dd>code :股票代码
+name :股票名称</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.classifying.get_hs300s">
+<code class="descclassname">tushare.stock.classifying.</code><code class="descname">get_hs300s</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.classifying.get_hs300s" title="永久链接至目标">¶</a></dt>
+<dd><p>获取沪深300当前成份股及所占权重
+Return
+——–
+DataFrame</p>
+<blockquote>
+<div>code :股票代码
+name :股票名称
+date :日期
+weight:权重</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.classifying.get_industry_classified">
+<code class="descclassname">tushare.stock.classifying.</code><code class="descname">get_industry_classified</code><span class="sig-paren">(</span><em>standard='sina'</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.classifying.get_industry_classified" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取行业分类数据</div></blockquote>
+<p>standard
+sina:新浪行业 sw：申万 行业</p>
+<dl class="docutils">
+<dt>DataFrame</dt>
+<dd>code :股票代码
+name :股票名称
+c_name :行业名称</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.classifying.get_sme_classified">
+<code class="descclassname">tushare.stock.classifying.</code><code class="descname">get_sme_classified</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.classifying.get_sme_classified" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取中小板股票</div></blockquote>
+<dl class="docutils">
+<dt>DataFrame</dt>
+<dd>code :股票代码
+name :股票名称</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.classifying.get_st_classified">
+<code class="descclassname">tushare.stock.classifying.</code><code class="descname">get_st_classified</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.classifying.get_st_classified" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取风险警示板股票</div></blockquote>
+<dl class="docutils">
+<dt>DataFrame</dt>
+<dd>code :股票代码
+name :股票名称</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.classifying.get_suspended">
+<code class="descclassname">tushare.stock.classifying.</code><code class="descname">get_suspended</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.classifying.get_suspended" title="永久链接至目标">¶</a></dt>
+<dd><p>获取暂停上市股票列表
+Return
+——–
+DataFrame</p>
+<blockquote>
+<div>code :股票代码
+name :股票名称
+oDate:上市日期
+tDate:终止上市日期</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.classifying.get_sz50s">
+<code class="descclassname">tushare.stock.classifying.</code><code class="descname">get_sz50s</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.classifying.get_sz50s" title="永久链接至目标">¶</a></dt>
+<dd><p>获取上证50成份股
+Return
+——–
+DataFrame</p>
+<blockquote>
+<div>date :日期
+code :股票代码
+name :股票名称</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.classifying.get_terminated">
+<code class="descclassname">tushare.stock.classifying.</code><code class="descname">get_terminated</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.classifying.get_terminated" title="永久链接至目标">¶</a></dt>
+<dd><p>获取终止上市股票列表
+Return
+——–
+DataFrame</p>
+<blockquote>
+<div>code :股票代码
+name :股票名称
+oDate:上市日期
+tDate:终止上市日期</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.classifying.get_zz500s">
+<code class="descclassname">tushare.stock.classifying.</code><code class="descname">get_zz500s</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.classifying.get_zz500s" title="永久链接至目标">¶</a></dt>
+<dd><p>获取中证500成份股
+Return
+——–
+DataFrame</p>
+<blockquote>
+<div>date :日期
+code :股票代码
+name :股票名称
+weight : 权重</div></blockquote>
+</dd></dl>
+
+</div>
+<div class="section" id="module-tushare.stock.cons">
+<span id="tushare-stock-cons-module"></span><h2>tushare.stock.cons module<a class="headerlink" href="#module-tushare.stock.cons" title="永久链接至标题">¶</a></h2>
+<p>Created on 2014/07/31
+&#64;author: Jimmy Liu
+&#64;group : waditu
+&#64;contact: <a class="reference external" href="mailto:jimmysoa&#37;&#52;&#48;sina&#46;cn">jimmysoa<span>&#64;</span>sina<span>&#46;</span>cn</a></p>
+<dl class="function">
+<dt id="tushare.stock.cons.FORMAT">
+<code class="descclassname">tushare.stock.cons.</code><code class="descname">FORMAT</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.cons.FORMAT" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.cons.FORMAT4">
+<code class="descclassname">tushare.stock.cons.</code><code class="descname">FORMAT4</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.cons.FORMAT4" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-tushare.stock.fundamental">
+<span id="tushare-stock-fundamental-module"></span><h2>tushare.stock.fundamental module<a class="headerlink" href="#module-tushare.stock.fundamental" title="永久链接至标题">¶</a></h2>
+<p>基本面数据接口 
+Created on 2015/01/18
+&#64;author: Jimmy Liu
+&#64;group : waditu
+&#64;contact: <a class="reference external" href="mailto:jimmysoa&#37;&#52;&#48;sina&#46;cn">jimmysoa<span>&#64;</span>sina<span>&#46;</span>cn</a></p>
+<dl class="function">
+<dt id="tushare.stock.fundamental.get_balance_sheet">
+<code class="descclassname">tushare.stock.fundamental.</code><code class="descname">get_balance_sheet</code><span class="sig-paren">(</span><em>code</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.fundamental.get_balance_sheet" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取某股票的历史所有时期资产负债表</div></blockquote>
+<p>code:str 股票代码 e.g:600518</p>
+<dl class="docutils">
+<dt>DataFrame</dt>
+<dd>行列名称为中文且数目较多，建议获取数据后保存到本地查看</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.fundamental.get_basicdata_hexin">
+<code class="descclassname">tushare.stock.fundamental.</code><code class="descname">get_basicdata_hexin</code><span class="sig-paren">(</span><em>code</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.fundamental.get_basicdata_hexin" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.fundamental.get_cash_flow">
+<code class="descclassname">tushare.stock.fundamental.</code><code class="descname">get_cash_flow</code><span class="sig-paren">(</span><em>code</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.fundamental.get_cash_flow" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取某股票的历史所有时期现金流表</div></blockquote>
+<p>code:str 股票代码 e.g:600518</p>
+<dl class="docutils">
+<dt>DataFrame</dt>
+<dd>行列名称为中文且数目较多，建议获取数据后保存到本地查看</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.fundamental.get_cashflow_data">
+<code class="descclassname">tushare.stock.fundamental.</code><code class="descname">get_cashflow_data</code><span class="sig-paren">(</span><em>year</em>, <em>quarter</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.fundamental.get_cashflow_data" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取现金流量数据</div></blockquote>
+<p>year:int 年度 e.g:2014
+quarter:int 季度 :1、2、3、4，只能输入这4个季度</p>
+<blockquote>
+<div>说明：由于是从网站获取的数据，需要一页页抓取，速度取决于您当前网络速度</div></blockquote>
+<dl class="docutils">
+<dt>DataFrame</dt>
+<dd>code,代码
+name,名称
+cf_sales,经营现金净流量对销售收入比率
+rateofreturn,资产的经营现金流量回报率
+cf_nm,经营现金净流量与净利润的比率
+cf_liabilities,经营现金净流量对负债比率
+cashflowratio,现金流量比率</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.fundamental.get_debtpaying_data">
+<code class="descclassname">tushare.stock.fundamental.</code><code class="descname">get_debtpaying_data</code><span class="sig-paren">(</span><em>year</em>, <em>quarter</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.fundamental.get_debtpaying_data" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取偿债能力数据</div></blockquote>
+<p>year:int 年度 e.g:2014
+quarter:int 季度 :1、2、3、4，只能输入这4个季度</p>
+<blockquote>
+<div>说明：由于是从网站获取的数据，需要一页页抓取，速度取决于您当前网络速度</div></blockquote>
+<dl class="docutils">
+<dt>DataFrame</dt>
+<dd>code,代码
+name,名称
+currentratio,流动比率
+quickratio,速动比率
+cashratio,现金比率
+icratio,利息支付倍数
+sheqratio,股东权益比率
+adratio,股东权益增长率</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.fundamental.get_growth_data">
+<code class="descclassname">tushare.stock.fundamental.</code><code class="descname">get_growth_data</code><span class="sig-paren">(</span><em>year</em>, <em>quarter</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.fundamental.get_growth_data" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取成长能力数据</div></blockquote>
+<p>year:int 年度 e.g:2014
+quarter:int 季度 :1、2、3、4，只能输入这4个季度</p>
+<blockquote>
+<div>说明：由于是从网站获取的数据，需要一页页抓取，速度取决于您当前网络速度</div></blockquote>
+<dl class="docutils">
+<dt>DataFrame</dt>
+<dd>code,代码
+name,名称
+mbrg,主营业务收入增长率(%)
+nprg,净利润增长率(%)
+nav,净资产增长率
+targ,总资产增长率
+epsg,每股收益增长率
+seg,股东权益增长率</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.fundamental.get_operation_data">
+<code class="descclassname">tushare.stock.fundamental.</code><code class="descname">get_operation_data</code><span class="sig-paren">(</span><em>year</em>, <em>quarter</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.fundamental.get_operation_data" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取营运能力数据</div></blockquote>
+<p>year:int 年度 e.g:2014
+quarter:int 季度 :1、2、3、4，只能输入这4个季度</p>
+<blockquote>
+<div>说明：由于是从网站获取的数据，需要一页页抓取，速度取决于您当前网络速度</div></blockquote>
+<dl class="docutils">
+<dt>DataFrame</dt>
+<dd>code,代码
+name,名称
+arturnover,应收账款周转率(次)
+arturndays,应收账款周转天数(天)
+inventory_turnover,存货周转率(次)
+inventory_days,存货周转天数(天)
+currentasset_turnover,流动资产周转率(次)
+currentasset_days,流动资产周转天数(天)</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.fundamental.get_profit_data">
+<code class="descclassname">tushare.stock.fundamental.</code><code class="descname">get_profit_data</code><span class="sig-paren">(</span><em>year</em>, <em>quarter</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.fundamental.get_profit_data" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取盈利能力数据</div></blockquote>
+<p>year:int 年度 e.g:2014
+quarter:int 季度 :1、2、3、4，只能输入这4个季度</p>
+<blockquote>
+<div>说明：由于是从网站获取的数据，需要一页页抓取，速度取决于您当前网络速度</div></blockquote>
+<dl class="docutils">
+<dt>DataFrame</dt>
+<dd>code,代码
+name,名称
+roe,净资产收益率(%)
+net_profit_ratio,净利率(%)
+gross_profit_rate,毛利率(%)
+net_profits,净利润(万元)
+eps,每股收益
+business_income,营业收入(百万元)
+bips,每股主营业务收入(元)</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.fundamental.get_profit_statement">
+<code class="descclassname">tushare.stock.fundamental.</code><code class="descname">get_profit_statement</code><span class="sig-paren">(</span><em>code</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.fundamental.get_profit_statement" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取某股票的历史所有时期利润表</div></blockquote>
+<p>code:str 股票代码 e.g:600518</p>
+<dl class="docutils">
+<dt>DataFrame</dt>
+<dd>行列名称为中文且数目较多，建议获取数据后保存到本地查看</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.fundamental.get_report_data">
+<code class="descclassname">tushare.stock.fundamental.</code><code class="descname">get_report_data</code><span class="sig-paren">(</span><em>year</em>, <em>quarter</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.fundamental.get_report_data" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取业绩报表数据</div></blockquote>
+<p>year:int 年度 e.g:2014
+quarter:int 季度 :1、2、3、4，只能输入这4个季度</p>
+<blockquote>
+<div>说明：由于是从网站获取的数据，需要一页页抓取，速度取决于您当前网络速度</div></blockquote>
+<dl class="docutils">
+<dt>DataFrame</dt>
+<dd>code,代码
+name,名称
+eps,每股收益
+eps_yoy,每股收益同比(%)
+bvps,每股净资产
+roe,净资产收益率(%)
+epcf,每股现金流量(元)
+net_profits,净利润(万元)
+profits_yoy,净利润同比(%)
+distrib,分配方案
+report_date,发布日期</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.fundamental.get_stock_basics">
+<code class="descclassname">tushare.stock.fundamental.</code><code class="descname">get_stock_basics</code><span class="sig-paren">(</span><em>date=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.fundamental.get_stock_basics" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取沪深上市公司基本情况</div></blockquote>
+<p>Parameters
+date:日期YYYY-MM-DD，默认为上一个交易日，目前只能提供2016-08-09之后的历史数据</p>
+<dl class="docutils">
+<dt>DataFrame</dt>
+<dd>code,代码
+name,名称
+industry,细分行业
+area,地区
+pe,市盈率
+outstanding,流通股本
+totals,总股本(万)
+totalAssets,总资产(万)
+liquidAssets,流动资产
+fixedAssets,固定资产
+reserved,公积金
+reservedPerShare,每股公积金
+eps,每股收益
+bvps,每股净资
+pb,市净率
+timeToMarket,上市日期</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-tushare.stock.globals">
+<span id="tushare-stock-globals-module"></span><h2>tushare.stock.globals module<a class="headerlink" href="#module-tushare.stock.globals" title="永久链接至标题">¶</a></h2>
+<p>全球市场
+Created on 2016/11/27
+&#64;author: Jimmy Liu
+&#64;group : waditu
+&#64;contact: <a class="reference external" href="mailto:jimmysoa&#37;&#52;&#48;sina&#46;cn">jimmysoa<span>&#64;</span>sina<span>&#46;</span>cn</a></p>
+<dl class="function">
+<dt id="tushare.stock.globals.global_realtime">
+<code class="descclassname">tushare.stock.globals.</code><code class="descname">global_realtime</code><span class="sig-paren">(</span><em>symbols=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.globals.global_realtime" title="永久链接至目标">¶</a></dt>
+<dd><p>全球实时指数</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-tushare.stock.macro">
+<span id="tushare-stock-macro-module"></span><h2>tushare.stock.macro module<a class="headerlink" href="#module-tushare.stock.macro" title="永久链接至标题">¶</a></h2>
+<p>宏观经济数据接口 
+Created on 2015/01/24
+&#64;author: Jimmy Liu
+&#64;group : waditu
+&#64;contact: <a class="reference external" href="mailto:jimmysoa&#37;&#52;&#48;sina&#46;cn">jimmysoa<span>&#64;</span>sina<span>&#46;</span>cn</a></p>
+<dl class="function">
+<dt id="tushare.stock.macro.get_cpi">
+<code class="descclassname">tushare.stock.macro.</code><code class="descname">get_cpi</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.macro.get_cpi" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取居民消费价格指数数据</div></blockquote>
+<dl class="docutils">
+<dt>DataFrame</dt>
+<dd>month :统计月份
+cpi :价格指数</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.macro.get_deposit_rate">
+<code class="descclassname">tushare.stock.macro.</code><code class="descname">get_deposit_rate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.macro.get_deposit_rate" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取存款利率数据</div></blockquote>
+<dl class="docutils">
+<dt>DataFrame</dt>
+<dd>date :变动日期
+deposit_type :存款种类
+rate:利率（%）</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.macro.get_gdp_contrib">
+<code class="descclassname">tushare.stock.macro.</code><code class="descname">get_gdp_contrib</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.macro.get_gdp_contrib" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取三大产业贡献率数据</div></blockquote>
+<dl class="docutils">
+<dt>DataFrame</dt>
+<dd>year :统计年度
+gdp_yoy :国内生产总值
+pi :第一产业献率(%)
+si :第二产业献率(%)
+industry:其中工业献率(%)
+ti :第三产业献率(%)</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.macro.get_gdp_for">
+<code class="descclassname">tushare.stock.macro.</code><code class="descname">get_gdp_for</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.macro.get_gdp_for" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取三大需求对GDP贡献数据</div></blockquote>
+<dl class="docutils">
+<dt>DataFrame</dt>
+<dd>year :统计年度
+end_for :最终消费支出贡献率(%)
+for_rate :最终消费支出拉动(百分点)
+asset_for :资本形成总额贡献率(%)
+asset_rate:资本形成总额拉动(百分点)
+goods_for :货物和服务净出口贡献率(%)
+goods_rate :货物和服务净出口拉动(百分点)</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.macro.get_gdp_pull">
+<code class="descclassname">tushare.stock.macro.</code><code class="descname">get_gdp_pull</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.macro.get_gdp_pull" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取三大产业对GDP拉动数据</div></blockquote>
+<dl class="docutils">
+<dt>DataFrame</dt>
+<dd>year :统计年度
+gdp_yoy :国内生产总值同比增长(%)
+pi :第一产业拉动率(%)
+si :第二产业拉动率(%)
+industry:其中工业拉动(%)
+ti :第三产业拉动率(%)</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.macro.get_gdp_quarter">
+<code class="descclassname">tushare.stock.macro.</code><code class="descname">get_gdp_quarter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.macro.get_gdp_quarter" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取季度国内生产总值数据</div></blockquote>
+<dl class="docutils">
+<dt>DataFrame</dt>
+<dd>quarter :季度
+gdp :国内生产总值(亿元)
+gdp_yoy :国内生产总值同比增长(%)
+pi :第一产业增加值(亿元)
+pi_yoy:第一产业增加值同比增长(%)
+si :第二产业增加值(亿元)
+si_yoy :第二产业增加值同比增长(%)
+ti :第三产业增加值(亿元)
+ti_yoy :第三产业增加值同比增长(%)</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.macro.get_gdp_year">
+<code class="descclassname">tushare.stock.macro.</code><code class="descname">get_gdp_year</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.macro.get_gdp_year" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取年度国内生产总值数据</div></blockquote>
+<dl class="docutils">
+<dt>DataFrame</dt>
+<dd>year :统计年度
+gdp :国内生产总值(亿元)
+pc_gdp :人均国内生产总值(元)
+gnp :国民生产总值(亿元)
+pi :第一产业(亿元)
+si :第二产业(亿元)
+industry :工业(亿元)
+cons_industry :建筑业(亿元)
+ti :第三产业(亿元)
+trans_industry :交通运输仓储邮电通信业(亿元)
+lbdy :批发零售贸易及餐饮业(亿元)</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.macro.get_gold_and_foreign_reserves">
+<code class="descclassname">tushare.stock.macro.</code><code class="descname">get_gold_and_foreign_reserves</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.macro.get_gold_and_foreign_reserves" title="永久链接至目标">¶</a></dt>
+<dd><p>获取外汇储备
+Returns
+——-
+DataFrame</p>
+<blockquote>
+<div>month :统计时间
+gold:黄金储备(万盎司)
+foreign_reserves:外汇储备(亿美元)</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.macro.get_loan_rate">
+<code class="descclassname">tushare.stock.macro.</code><code class="descname">get_loan_rate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.macro.get_loan_rate" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取贷款利率数据</div></blockquote>
+<dl class="docutils">
+<dt>DataFrame</dt>
+<dd>date :执行日期
+loan_type :存款种类
+rate:利率（%）</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.macro.get_money_supply">
+<code class="descclassname">tushare.stock.macro.</code><code class="descname">get_money_supply</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.macro.get_money_supply" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取货币供应量数据</div></blockquote>
+<dl class="docutils">
+<dt>DataFrame</dt>
+<dd>month :统计时间
+m2 :货币和准货币（广义货币M2）(亿元)
+m2_yoy:货币和准货币（广义货币M2）同比增长(%)
+m1:货币(狭义货币M1)(亿元)
+m1_yoy:货币(狭义货币M1)同比增长(%)
+m0:流通中现金(M0)(亿元)
+m0_yoy:流通中现金(M0)同比增长(%)
+cd:活期存款(亿元)
+cd_yoy:活期存款同比增长(%)
+qm:准货币(亿元)
+qm_yoy:准货币同比增长(%)
+ftd:定期存款(亿元)
+ftd_yoy:定期存款同比增长(%)
+sd:储蓄存款(亿元)
+sd_yoy:储蓄存款同比增长(%)
+rests:其他存款(亿元)
+rests_yoy:其他存款同比增长(%)</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.macro.get_money_supply_bal">
+<code class="descclassname">tushare.stock.macro.</code><code class="descname">get_money_supply_bal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.macro.get_money_supply_bal" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取货币供应量(年底余额)数据</div></blockquote>
+<dl class="docutils">
+<dt>DataFrame</dt>
+<dd>year :统计年度
+m2 :货币和准货币(亿元)
+m1:货币(亿元)
+m0:流通中现金(亿元)
+cd:活期存款(亿元)
+qm:准货币(亿元)
+ftd:定期存款(亿元)
+sd:储蓄存款(亿元)
+rests:其他存款(亿元)</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.macro.get_ppi">
+<code class="descclassname">tushare.stock.macro.</code><code class="descname">get_ppi</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.macro.get_ppi" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取工业品出厂价格指数数据</div></blockquote>
+<dl class="docutils">
+<dt>DataFrame</dt>
+<dd>month :统计月份
+ppiip :工业品出厂价格指数
+ppi :生产资料价格指数
+qm:采掘工业价格指数
+rmi:原材料工业价格指数
+pi:加工工业价格指数    
+cg:生活资料价格指数
+food:食品类价格指数
+clothing:衣着类价格指数
+roeu:一般日用品价格指数
+dcg:耐用消费品价格指数</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.macro.get_rrr">
+<code class="descclassname">tushare.stock.macro.</code><code class="descname">get_rrr</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.macro.get_rrr" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取存款准备金率数据</div></blockquote>
+<dl class="docutils">
+<dt>DataFrame</dt>
+<dd>date :变动日期
+before :调整前存款准备金率(%)
+now:调整后存款准备金率(%)
+changed:调整幅度(%)</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-tushare.stock.macro_vars">
+<span id="tushare-stock-macro-vars-module"></span><h2>tushare.stock.macro_vars module<a class="headerlink" href="#module-tushare.stock.macro_vars" title="永久链接至标题">¶</a></h2>
+<dl class="function">
+<dt id="tushare.stock.macro_vars.random">
+<code class="descclassname">tushare.stock.macro_vars.</code><code class="descname">random</code><span class="sig-paren">(</span><em>n=13</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.macro_vars.random" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-tushare.stock.minsdata">
+<span id="tushare-stock-minsdata-module"></span><h2>tushare.stock.minsdata module<a class="headerlink" href="#module-tushare.stock.minsdata" title="永久链接至标题">¶</a></h2>
+<dl class="class">
+<dt id="tushare.stock.minsdata.TsData">
+<em class="property">class </em><code class="descclassname">tushare.stock.minsdata.</code><code class="descname">TsData</code><a class="headerlink" href="#tushare.stock.minsdata.TsData" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(在 Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="method">
+<dt id="tushare.stock.minsdata.TsData.get_data">
+<code class="descname">get_data</code><span class="sig-paren">(</span><em>symbols=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.minsdata.TsData.get_data" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tushare.stock.minsdata.TsData.get_m_data">
+<code class="descname">get_m_data</code><span class="sig-paren">(</span><em>symbols</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.minsdata.TsData.get_m_data" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tushare.stock.news_vars">
+<span id="tushare-stock-news-vars-module"></span><h2>tushare.stock.news_vars module<a class="headerlink" href="#module-tushare.stock.news_vars" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="module-tushare.stock.newsevent">
+<span id="tushare-stock-newsevent-module"></span><h2>tushare.stock.newsevent module<a class="headerlink" href="#module-tushare.stock.newsevent" title="永久链接至标题">¶</a></h2>
+<p>新闻事件数据接口 
+Created on 2015/02/07
+&#64;author: Jimmy Liu
+&#64;group : waditu
+&#64;contact: <a class="reference external" href="mailto:jimmysoa&#37;&#52;&#48;sina&#46;cn">jimmysoa<span>&#64;</span>sina<span>&#46;</span>cn</a></p>
+<dl class="function">
+<dt id="tushare.stock.newsevent.get_latest_news">
+<code class="descclassname">tushare.stock.newsevent.</code><code class="descname">get_latest_news</code><span class="sig-paren">(</span><em>top=None</em>, <em>show_content=False</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.newsevent.get_latest_news" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取即时财经新闻</div></blockquote>
+<blockquote>
+<div>top:数值，显示最新消息的条数，默认为80条
+show_content:是否显示新闻内容，默认False</div></blockquote>
+<blockquote>
+<div><dl class="docutils">
+<dt>DataFrame</dt>
+<dd>classify :新闻类别
+title :新闻标题
+time :发布时间
+url :新闻链接
+content:新闻内容（在show_content为True的情况下出现）</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.newsevent.get_notices">
+<code class="descclassname">tushare.stock.newsevent.</code><code class="descname">get_notices</code><span class="sig-paren">(</span><em>code=None</em>, <em>date=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.newsevent.get_notices" title="永久链接至目标">¶</a></dt>
+<dd><p>个股信息地雷
+Parameters
+——–</p>
+<blockquote>
+<div>code:股票代码
+date:信息公布日期</div></blockquote>
+<blockquote>
+<div>DataFrame，属性列表：
+title:信息标题
+type:信息类型
+date:公告日期
+url:信息内容URL</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.newsevent.guba_sina">
+<code class="descclassname">tushare.stock.newsevent.</code><code class="descname">guba_sina</code><span class="sig-paren">(</span><em>show_content=False</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.newsevent.guba_sina" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取sina财经股吧首页的重点消息</div></blockquote>
+<blockquote>
+<div>show_content:是否显示内容，默认False</div></blockquote>
+<dl class="docutils">
+<dt>DataFrame</dt>
+<dd>title, 消息标题
+content, 消息内容（show_content=True的情况下）
+ptime, 发布时间
+rcounts,阅读次数</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.newsevent.latest_content">
+<code class="descclassname">tushare.stock.newsevent.</code><code class="descname">latest_content</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.newsevent.latest_content" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取即时财经新闻内容</div></blockquote>
+<blockquote>
+<div>url:新闻链接</div></blockquote>
+<blockquote>
+<div>string:返回新闻的文字内容</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.newsevent.notice_content">
+<code class="descclassname">tushare.stock.newsevent.</code><code class="descname">notice_content</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.newsevent.notice_content" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取信息地雷内容</div></blockquote>
+<blockquote>
+<div>url:内容链接</div></blockquote>
+<blockquote>
+<div>string:信息内容</div></blockquote>
+</dd></dl>
+
+</div>
+<div class="section" id="module-tushare.stock.ref_vars">
+<span id="tushare-stock-ref-vars-module"></span><h2>tushare.stock.ref_vars module<a class="headerlink" href="#module-tushare.stock.ref_vars" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="module-tushare.stock.reference">
+<span id="tushare-stock-reference-module"></span><h2>tushare.stock.reference module<a class="headerlink" href="#module-tushare.stock.reference" title="永久链接至标题">¶</a></h2>
+<p>投资参考数据接口 
+Created on 2015/03/21
+&#64;author: Jimmy Liu
+&#64;group : waditu
+&#64;contact: <a class="reference external" href="mailto:jimmysoa&#37;&#52;&#48;sina&#46;cn">jimmysoa<span>&#64;</span>sina<span>&#46;</span>cn</a></p>
+<dl class="function">
+<dt id="tushare.stock.reference.forecast_data">
+<code class="descclassname">tushare.stock.reference.</code><code class="descname">forecast_data</code><span class="sig-paren">(</span><em>year</em>, <em>quarter</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.reference.forecast_data" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取业绩预告数据</div></blockquote>
+<p>year:int 年度 e.g:2014
+quarter:int 季度 :1、2、3、4，只能输入这4个季度</p>
+<blockquote>
+<div>说明：由于是从网站获取的数据，需要一页页抓取，速度取决于您当前网络速度</div></blockquote>
+<dl class="docutils">
+<dt>DataFrame</dt>
+<dd>code,代码
+name,名称
+type,业绩变动类型【预增、预亏等】
+report_date,发布日期
+pre_eps,上年同期每股收益
+range,业绩变动范围</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.reference.fund_holdings">
+<code class="descclassname">tushare.stock.reference.</code><code class="descname">fund_holdings</code><span class="sig-paren">(</span><em>year</em>, <em>quarter</em>, <em>retry_count=3</em>, <em>pause=0.001</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.reference.fund_holdings" title="永久链接至目标">¶</a></dt>
+<dd><p>获取基金持股数据
+Parameters
+——–
+year:年份e.g 2014
+quarter:季度（只能输入1，2，3，4这个四个数字）
+retry_count : int, 默认 3</p>
+<blockquote>
+<div>如遇网络等问题重复执行的次数</div></blockquote>
+<dl class="docutils">
+<dt>pause <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 0</span></dt>
+<dd>重复请求数据过程中暂停的秒数，防止请求间隔时间太短出现的问题</dd>
+</dl>
+<p>DataFrame
+code:股票代码
+name:名称
+date:报告日期
+nums:基金家数
+nlast:与上期相比（增加或减少了）
+count:基金持股数（万股）
+clast:与上期相比
+amount:基金持股市值
+ratio:占流通盘比率</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.reference.margin_detail">
+<code class="descclassname">tushare.stock.reference.</code><code class="descname">margin_detail</code><span class="sig-paren">(</span><em>date=''</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.reference.margin_detail" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>沪深融券融券明细</div></blockquote>
+<dl class="docutils">
+<dt>date:string</dt>
+<dd>日期 format：YYYY-MM-DD 或者 YYYYMMDD</dd>
+</dl>
+<p>code: 证券代码
+name: 证券名称
+buy: 今日买入额
+buy_total:融资余额
+sell: 今日卖出量（股）
+sell_total: 融券余量（股）
+sell_amount: 融券余额
+total: 融资融券余额(元)
+buy_repay: 本日融资偿还额(元)
+sell_repay: 本日融券偿还量</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.reference.margin_offset">
+<code class="descclassname">tushare.stock.reference.</code><code class="descname">margin_offset</code><span class="sig-paren">(</span><em>date</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.reference.margin_offset" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>融资融券可充抵保证金证券</div></blockquote>
+<dl class="docutils">
+<dt>date:string</dt>
+<dd>日期 format：YYYY-MM-DD 或者 YYYYMMDD</dd>
+</dl>
+<p>code: 证券代码
+name: 证券名称</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.reference.margin_target">
+<code class="descclassname">tushare.stock.reference.</code><code class="descname">margin_target</code><span class="sig-paren">(</span><em>date=''</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.reference.margin_target" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>沪深融券融券标的</div></blockquote>
+<dl class="docutils">
+<dt>date:string</dt>
+<dd>日期 format：YYYY-MM-DD 或者 YYYYMMDD</dd>
+</dl>
+<p>code: 证券代码
+name: 证券名称
+long: 融资标的
+short: 融券标的</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.reference.margin_zsl">
+<code class="descclassname">tushare.stock.reference.</code><code class="descname">margin_zsl</code><span class="sig-paren">(</span><em>date=''</em>, <em>broker=''</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.reference.margin_zsl" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>融资融券充抵保证金折算率</div></blockquote>
+<dl class="docutils">
+<dt>date:string</dt>
+<dd>日期 format：YYYY-MM-DD 或者 YYYYMMDD</dd>
+</dl>
+<p>broker:
+gtja:国泰君安
+yhzq:银河证券
+gfzq：广发证券
+zszq：招商证券
+gxzq：国信证券
+swhy：申万宏源
+zxjt：中信建投
+zxzq：中信证券</p>
+<p>code: 证券代码
+name: 证券名称
+ratio:比率
+broker:券商代码</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.reference.moneyflow_hsgt">
+<code class="descclassname">tushare.stock.reference.</code><code class="descname">moneyflow_hsgt</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.reference.moneyflow_hsgt" title="永久链接至目标">¶</a></dt>
+<dd><p>获取沪深港通资金流向
+return:
+DataFrame,单位: 百万元
+————–
+date: 交易日期
+ggt_ss: 港股通(沪)
+ggt_sz: 港股通(深)
+hgt: 沪港通
+sgt: 深港通
+north_money: 北向资金流入
+south_money: 南向资金流入</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.reference.new_cbonds">
+<code class="descclassname">tushare.stock.reference.</code><code class="descname">new_cbonds</code><span class="sig-paren">(</span><em>default=1</em>, <em>retry_count=3</em>, <em>pause=0.001</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.reference.new_cbonds" title="永久链接至目标">¶</a></dt>
+<dd><p>获取可转债申购列表
+Parameters
+——–
+retry_count : int, 默认 3</p>
+<blockquote>
+<div>如遇网络等问题重复执行的次数</div></blockquote>
+<dl class="docutils">
+<dt>pause <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 0</span></dt>
+<dd>重复请求数据过程中暂停的秒数，防止请求间隔时间太短出现的问题</dd>
+</dl>
+<p>DataFrame
+bcode:债券代码
+bname:债券名称
+scode:股票代码
+sname:股票名称
+xcode:申购代码
+amount:发行总数(亿元)
+marketprice:最新市场价格
+convprice:转股价格
+firstdayprice:首日收盘价
+ipo_date:上网发行日期
+issue_date:上市日期
+ballot:中签率(%)
+return：打新收益率(%)
+perreturn:每中一股收益（万元）</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.reference.new_stocks">
+<code class="descclassname">tushare.stock.reference.</code><code class="descname">new_stocks</code><span class="sig-paren">(</span><em>retry_count=3</em>, <em>pause=0.001</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.reference.new_stocks" title="永久链接至目标">¶</a></dt>
+<dd><p>获取新股上市数据
+Parameters
+——–
+retry_count : int, 默认 3</p>
+<blockquote>
+<div>如遇网络等问题重复执行的次数</div></blockquote>
+<dl class="docutils">
+<dt>pause <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 0</span></dt>
+<dd>重复请求数据过程中暂停的秒数，防止请求间隔时间太短出现的问题</dd>
+</dl>
+<p>DataFrame
+code:股票代码
+xcode:申购代码
+name:名称
+ipo_date:上网发行日期
+issue_date:上市日期
+amount:发行数量(万股)
+markets:上网发行数量(万股)
+price:发行价格(元)
+pe:发行市盈率
+limit:个人申购上限(万股)
+funds：募集资金(亿元)
+ballot:网上中签率(%)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.reference.pledged_detail">
+<code class="descclassname">tushare.stock.reference.</code><code class="descname">pledged_detail</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.reference.pledged_detail" title="永久链接至目标">¶</a></dt>
+<dd><p>股票质押数据</p>
+<p>code: 证券代码
+name: 证券名称
+ann_date: 公告日期
+pledgor:出质人
+pledgee:质权人
+volume:质押数量
+from_date:质押日期
+end_date: 解除日期</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.reference.profit_data">
+<code class="descclassname">tushare.stock.reference.</code><code class="descname">profit_data</code><span class="sig-paren">(</span><em>year=2017</em>, <em>top=25</em>, <em>retry_count=3</em>, <em>pause=0.001</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.reference.profit_data" title="永久链接至目标">¶</a></dt>
+<dd><p>获取分配预案数据
+Parameters
+——–
+year:年份
+top:取最新n条数据，默认取最近公布的25条
+retry_count : int, 默认 3</p>
+<blockquote>
+<div><blockquote>
+<div>如遇网络等问题重复执行的次数</div></blockquote>
+<dl class="docutils">
+<dt>pause <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 0</span></dt>
+<dd>重复请求数据过程中暂停的秒数，防止请求间隔时间太短出现的问题</dd>
+</dl>
+</div></blockquote>
+<p>DataFrame
+code:股票代码
+name:股票名称
+year:分配年份
+report_date:公布日期
+divi:分红金额（每10股）
+shares:转增和送股数（每10股）</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.reference.profit_divis">
+<code class="descclassname">tushare.stock.reference.</code><code class="descname">profit_divis</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.reference.profit_divis" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取分送送股数据</div></blockquote>
+<dl class="docutils">
+<dt>Return:DataFrame</dt>
+<dd>code:代码    
+name:证券简称    
+year:分配年度    
+bshares:送股  
+incshares:转增股
+totals:送转总数 
+cash:派现   
+plandate:预案公布日    
+regdate:股权登记日    
+exdate:除权除息日    
+eventproc:事件进程 ,预案或实施
+anndate:公告日期</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.reference.sh_margin_details">
+<code class="descclassname">tushare.stock.reference.</code><code class="descname">sh_margin_details</code><span class="sig-paren">(</span><em>date=''</em>, <em>symbol=''</em>, <em>start=''</em>, <em>end=''</em>, <em>retry_count=3</em>, <em>pause=0.001</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.reference.sh_margin_details" title="永久链接至目标">¶</a></dt>
+<dd><p>获取沪市融资融券明细列表
+Parameters
+——–
+date:string</p>
+<blockquote>
+<div>明细数据日期 format：YYYY-MM-DD 默认为空’‘</div></blockquote>
+<dl class="docutils">
+<dt>symbol：string</dt>
+<dd>标的代码，6位数字e.g.600848，默认为空</dd>
+<dt>start:string</dt>
+<dd>开始日期 format：YYYY-MM-DD 默认为空’‘</dd>
+<dt>end:string</dt>
+<dd>结束日期 format：YYYY-MM-DD 默认为空’‘</dd>
+<dt>retry_count <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 3</span></dt>
+<dd>如遇网络等问题重复执行的次数</dd>
+<dt>pause <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 0</span></dt>
+<dd>重复请求数据过程中暂停的秒数，防止请求间隔时间太短出现的问题</dd>
+</dl>
+<p>DataFrame
+opDate:信用交易日期
+stockCode:标的证券代码
+securityAbbr:标的证券简称
+rzye:本日融资余额(元)
+rzmre: 本日融资买入额(元)
+rzche:本日融资偿还额(元)
+rqyl: 本日融券余量
+rqmcl: 本日融券卖出量
+rqchl: 本日融券偿还量</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.reference.sh_margins">
+<code class="descclassname">tushare.stock.reference.</code><code class="descname">sh_margins</code><span class="sig-paren">(</span><em>start=None</em>, <em>end=None</em>, <em>retry_count=3</em>, <em>pause=0.001</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.reference.sh_margins" title="永久链接至目标">¶</a></dt>
+<dd><p>获取沪市融资融券数据列表
+Parameters
+——–
+start:string</p>
+<blockquote>
+<div>开始日期 format：YYYY-MM-DD 为空时取去年今日</div></blockquote>
+<dl class="docutils">
+<dt>end:string</dt>
+<dd>结束日期 format：YYYY-MM-DD 为空时取当前日期</dd>
+<dt>retry_count <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 3</span></dt>
+<dd>如遇网络等问题重复执行的次数</dd>
+<dt>pause <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 0</span></dt>
+<dd>重复请求数据过程中暂停的秒数，防止请求间隔时间太短出现的问题</dd>
+</dl>
+<p>DataFrame
+opDate:信用交易日期
+rzye:本日融资余额(元)
+rzmre: 本日融资买入额(元)
+rqyl: 本日融券余量
+rqylje: 本日融券余量金额(元)
+rqmcl: 本日融券卖出量
+rzrqjyzl:本日融资融券余额(元)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.reference.stock_issuance">
+<code class="descclassname">tushare.stock.reference.</code><code class="descname">stock_issuance</code><span class="sig-paren">(</span><em>start_date=''</em>, <em>end_date=''</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.reference.stock_issuance" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>股票增发</div></blockquote>
+<p>start_date:string
+end_date:string</p>
+<blockquote>
+<div>日期 format：YYYY-MM-DD</div></blockquote>
+<p>code: 证券代码
+name: 证券名称
+type:类型，定向增发/公开增发
+count:数量
+price:增发价格
+close:最近收盘价
+issue_date:增发日期
+list_date:上市日期
+locked_year:锁定年数
+prem:截止当前溢价(%)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.reference.stock_pledged">
+<code class="descclassname">tushare.stock.reference.</code><code class="descname">stock_pledged</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.reference.stock_pledged" title="永久链接至目标">¶</a></dt>
+<dd><p>股票质押数据</p>
+<p>code: 证券代码
+name: 证券名称
+deals: 质押次数
+unrest_pledged: 无限售股质押数量(万)
+rest_pledged: 限售股质押数量(万)
+totals: 总股本
+p_ratio:质押比例（%）</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.reference.sz_margin_details">
+<code class="descclassname">tushare.stock.reference.</code><code class="descname">sz_margin_details</code><span class="sig-paren">(</span><em>date=''</em>, <em>retry_count=3</em>, <em>pause=0.001</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.reference.sz_margin_details" title="永久链接至目标">¶</a></dt>
+<dd><p>获取深市融资融券明细列表
+Parameters
+——–
+date:string</p>
+<blockquote>
+<div>明细数据日期 format：YYYY-MM-DD 默认为空’‘</div></blockquote>
+<dl class="docutils">
+<dt>retry_count <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 3</span></dt>
+<dd>如遇网络等问题重复执行的次数</dd>
+<dt>pause <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 0</span></dt>
+<dd>重复请求数据过程中暂停的秒数，防止请求间隔时间太短出现的问题</dd>
+</dl>
+<p>DataFrame
+opDate:信用交易日期
+stockCode:标的证券代码
+securityAbbr:标的证券简称
+rzmre: 融资买入额(元)
+rzye:融资余额(元)
+rqmcl: 融券卖出量
+rqyl: 融券余量
+rqye: 融券余量(元)
+rzrqye:融资融券余额(元)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.reference.sz_margins">
+<code class="descclassname">tushare.stock.reference.</code><code class="descname">sz_margins</code><span class="sig-paren">(</span><em>start=None</em>, <em>end=None</em>, <em>retry_count=3</em>, <em>pause=0.001</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.reference.sz_margins" title="永久链接至目标">¶</a></dt>
+<dd><p>获取深市融资融券数据列表
+Parameters
+——–
+start:string</p>
+<blockquote>
+<div>开始日期 format：YYYY-MM-DD 默认为上一周的今天</div></blockquote>
+<dl class="docutils">
+<dt>end:string</dt>
+<dd>结束日期 format：YYYY-MM-DD 默认为今日</dd>
+<dt>retry_count <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 3</span></dt>
+<dd>如遇网络等问题重复执行的次数</dd>
+<dt>pause <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 0</span></dt>
+<dd>重复请求数据过程中暂停的秒数，防止请求间隔时间太短出现的问题</dd>
+</dl>
+<p>DataFrame
+opDate:信用交易日期(index)
+rzmre: 融资买入额(元)
+rzye:融资余额(元)
+rqmcl: 融券卖出量
+rqyl: 融券余量
+rqye: 融券余量(元)
+rzrqye:融资融券余额(元)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.reference.top10_holders">
+<code class="descclassname">tushare.stock.reference.</code><code class="descname">top10_holders</code><span class="sig-paren">(</span><em>code=None</em>, <em>year=None</em>, <em>quarter=None</em>, <em>gdtype='0'</em>, <em>retry_count=3</em>, <em>pause=0.001</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.reference.top10_holders" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.reference.xsg_data">
+<code class="descclassname">tushare.stock.reference.</code><code class="descname">xsg_data</code><span class="sig-paren">(</span><em>year=None</em>, <em>month=None</em>, <em>retry_count=3</em>, <em>pause=0.001</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.reference.xsg_data" title="永久链接至目标">¶</a></dt>
+<dd><p>获取限售股解禁数据
+Parameters
+——–
+year:年份,默认为当前年
+month:解禁月份，默认为当前月
+retry_count : int, 默认 3</p>
+<blockquote>
+<div>如遇网络等问题重复执行的次数</div></blockquote>
+<dl class="docutils">
+<dt>pause <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 0</span></dt>
+<dd>重复请求数据过程中暂停的秒数，防止请求间隔时间太短出现的问题</dd>
+</dl>
+<p>DataFrame
+code:股票代码
+name:名称
+date:解禁日期
+count:解禁数量（万股）
+ratio:占总盘比率</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-tushare.stock.shibor">
+<span id="tushare-stock-shibor-module"></span><h2>tushare.stock.shibor module<a class="headerlink" href="#module-tushare.stock.shibor" title="永久链接至标题">¶</a></h2>
+<p>上海银行间同业拆放利率（Shibor）数据接口
+Created on 2014/07/31
+&#64;author: Jimmy Liu
+&#64;group : waditu
+&#64;contact: <a class="reference external" href="mailto:jimmysoa&#37;&#52;&#48;sina&#46;cn">jimmysoa<span>&#64;</span>sina<span>&#46;</span>cn</a></p>
+<dl class="function">
+<dt id="tushare.stock.shibor.lpr_data">
+<code class="descclassname">tushare.stock.shibor.</code><code class="descname">lpr_data</code><span class="sig-paren">(</span><em>year=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.shibor.lpr_data" title="永久链接至目标">¶</a></dt>
+<dd><p>获取贷款基础利率（LPR）
+Parameters
+——</p>
+<blockquote>
+<div>year:年份(int)</div></blockquote>
+<p>date:日期
+1Y:1年贷款基础利率</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.shibor.lpr_ma_data">
+<code class="descclassname">tushare.stock.shibor.</code><code class="descname">lpr_ma_data</code><span class="sig-paren">(</span><em>year=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.shibor.lpr_ma_data" title="永久链接至目标">¶</a></dt>
+<dd><p>获取贷款基础利率均值数据
+Parameters
+——</p>
+<blockquote>
+<div>year:年份(int)</div></blockquote>
+<p>date:日期
+1Y_5:5日均值
+1Y_10:10日均值
+1Y_20:20日均值</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.shibor.shibor_data">
+<code class="descclassname">tushare.stock.shibor.</code><code class="descname">shibor_data</code><span class="sig-paren">(</span><em>year=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.shibor.shibor_data" title="永久链接至目标">¶</a></dt>
+<dd><p>获取上海银行间同业拆放利率（Shibor）
+Parameters
+——</p>
+<blockquote>
+<div>year:年份(int)</div></blockquote>
+<p>date:日期
+ON:隔夜拆放利率
+1W:1周拆放利率
+2W:2周拆放利率
+1M:1个月拆放利率
+3M:3个月拆放利率
+6M:6个月拆放利率
+9M:9个月拆放利率
+1Y:1年拆放利率</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.shibor.shibor_ma_data">
+<code class="descclassname">tushare.stock.shibor.</code><code class="descname">shibor_ma_data</code><span class="sig-paren">(</span><em>year=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.shibor.shibor_ma_data" title="永久链接至目标">¶</a></dt>
+<dd><p>获取Shibor均值数据
+Parameters
+——</p>
+<blockquote>
+<div>year:年份(int)</div></blockquote>
+<dl class="docutils">
+<dt>date:日期</dt>
+<dd>其它分别为各周期5、10、20均价</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.shibor.shibor_quote_data">
+<code class="descclassname">tushare.stock.shibor.</code><code class="descname">shibor_quote_data</code><span class="sig-paren">(</span><em>year=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.shibor.shibor_quote_data" title="永久链接至目标">¶</a></dt>
+<dd><p>获取Shibor银行报价数据
+Parameters
+——</p>
+<blockquote>
+<div>year:年份(int)</div></blockquote>
+<p>date:日期
+bank:报价银行名称
+ON:隔夜拆放利率
+ON_B:隔夜拆放买入价
+ON_A:隔夜拆放卖出价
+1W_B:1周买入
+1W_A:1周卖出
+2W_B:买入
+2W_A:卖出
+1M_B:买入
+1M_A:卖出
+3M_B:买入
+3M_A:卖出
+6M_B:买入
+6M_A:卖出
+9M_B:买入
+9M_A:卖出
+1Y_B:买入
+1Y_A:卖出</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-tushare.stock.trading">
+<span id="tushare-stock-trading-module"></span><h2>tushare.stock.trading module<a class="headerlink" href="#module-tushare.stock.trading" title="永久链接至标题">¶</a></h2>
+<p>交易数据接口 
+Created on 2014/07/31
+&#64;author: Jimmy Liu
+&#64;group : waditu
+&#64;contact: <a class="reference external" href="mailto:jimmysoa&#37;&#52;&#48;sina&#46;cn">jimmysoa<span>&#64;</span>sina<span>&#46;</span>cn</a></p>
+<dl class="function">
+<dt id="tushare.stock.trading.bar">
+<code class="descclassname">tushare.stock.trading.</code><code class="descname">bar</code><span class="sig-paren">(</span><em>code</em>, <em>conn=None</em>, <em>start_date=None</em>, <em>end_date=None</em>, <em>freq='D'</em>, <em>asset='E'</em>, <em>market=''</em>, <em>adj=None</em>, <em>ma=[]</em>, <em>factors=[]</em>, <em>retry_count=3</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.trading.bar" title="永久链接至目标">¶</a></dt>
+<dd><p>BAR数据
+Parameters:
+————
+code:证券代码，支持股票,ETF/LOF,期货/期权,港股
+con:服务器连接 ，通过ts.api()或者ts.xpi()获得
+start_date:开始日期  YYYY-MM-DD/YYYYMMDD
+end_date:结束日期 YYYY-MM-DD/YYYYMMDD
+freq:支持1/5/15/30/60分钟,周/月/季/年
+asset:证券类型 E:股票和交易所基金，INDEX:沪深指数,X:期货/期权/港股/中概美国/中证指数/国际指数
+market:市场代码，通过ts.get_markets()获取
+adj:复权类型,None不复权,qfq:前复权,hfq:后复权
+ma:均线,支持自定义均线频度，如：ma5/ma10/ma20/ma60/maN
+factors因子数据，目前支持以下两种：</p>
+<blockquote>
+<div><p>vr:量比,默认不返回，返回需指定：factor=[‘vr’]
+tor:换手率，默认不返回，返回需指定：factor=[‘tor’]</p>
+<blockquote>
+<div>以上两种都需要：factor=[‘vr’, ‘tor’]</div></blockquote>
+</div></blockquote>
+<p>retry_count:网络重试次数</p>
+<p>DataFrame
+code:代码
+open：开盘close/high/low/vol成交量/amount成交额/maN均价/vr量比/tor换手率</p>
+<blockquote>
+<div>期货(asset=’X’)</div></blockquote>
+<p>code/open/close/high/low/avg_price：均价  position：持仓量  vol：成交总量</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.trading.bar2h5">
+<code class="descclassname">tushare.stock.trading.</code><code class="descname">bar2h5</code><span class="sig-paren">(</span><em>market=''</em>, <em>date=''</em>, <em>freq='D'</em>, <em>asset='E'</em>, <em>filepath=''</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.trading.bar2h5" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.trading.factor_adj">
+<code class="descclassname">tushare.stock.trading.</code><code class="descname">factor_adj</code><span class="sig-paren">(</span><em>code</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.trading.factor_adj" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.trading.factor_shares">
+<code class="descclassname">tushare.stock.trading.</code><code class="descname">factor_shares</code><span class="sig-paren">(</span><em>code</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.trading.factor_shares" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.trading.get_day_all">
+<code class="descclassname">tushare.stock.trading.</code><code class="descname">get_day_all</code><span class="sig-paren">(</span><em>date=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.trading.get_day_all" title="永久链接至目标">¶</a></dt>
+<dd><p>获取每日收盘行情
+Parameters:
+————-
+date:交易日期，格式:YYYY-MM-DD</p>
+<p>DataFrame
+code 代码, name 名称, p_change 涨幅%,
+price 现价, change 涨跌, open 今开, high 最高,
+low 最低, preprice 昨收, pe 市盈(动),
+volratio 量比, turnover 换手%, range 振幅%%,
+volume 总量, selling 内盘, buying 外盘,
+amount 总金额, totals 总股本(万), industry 细分行业,
+area 地区, floats 流通股本(万), fvalues 流通市值,
+abvalues AB股总市值, avgprice 均价, strength 强弱度%,
+activity 活跃度, avgturnover 笔换手, attack 攻击波%,
+interval3 近3月涨幅 ，interval 近6月涨幅</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.trading.get_dt_time">
+<code class="descclassname">tushare.stock.trading.</code><code class="descname">get_dt_time</code><span class="sig-paren">(</span><em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.trading.get_dt_time" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.trading.get_h_data">
+<code class="descclassname">tushare.stock.trading.</code><code class="descname">get_h_data</code><span class="sig-paren">(</span><em>code</em>, <em>start=None</em>, <em>end=None</em>, <em>autype='qfq'</em>, <em>index=False</em>, <em>retry_count=3</em>, <em>pause=0.001</em>, <em>drop_factor=True</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.trading.get_h_data" title="永久链接至目标">¶</a></dt>
+<dd><p>获取历史复权数据
+Parameters
+——</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>code:string</dt>
+<dd>股票代码 e.g. 600848</dd>
+<dt>start:string</dt>
+<dd>开始日期 format：YYYY-MM-DD 为空时取当前日期</dd>
+<dt>end:string</dt>
+<dd>结束日期 format：YYYY-MM-DD 为空时取去年今日</dd>
+<dt>autype:string</dt>
+<dd>复权类型，qfq-前复权 hfq-后复权 None-不复权，默认为qfq</dd>
+<dt>retry_count <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 3</span></dt>
+<dd>如遇网络等问题重复执行的次数</dd>
+<dt>pause <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 0</span></dt>
+<dd>重复请求数据过程中暂停的秒数，防止请求间隔时间太短出现的问题</dd>
+<dt>drop_factor <span class="classifier-delimiter">:</span> <span class="classifier">bool, 默认 True</span></dt>
+<dd>是否移除复权因子，在分析过程中可能复权因子意义不大，但是如需要先储存到数据库之后再分析的话，有该项目会更加灵活</dd>
+</dl>
+</div></blockquote>
+<blockquote>
+<div><dl class="docutils">
+<dt>DataFrame</dt>
+<dd>date 交易日期 (index)
+open 开盘价
+high  最高价
+close 收盘价
+low 最低价
+volume 成交量
+amount 成交金额</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.trading.get_hist_data">
+<code class="descclassname">tushare.stock.trading.</code><code class="descname">get_hist_data</code><span class="sig-paren">(</span><em>code=None</em>, <em>start=None</em>, <em>end=None</em>, <em>ktype='D'</em>, <em>retry_count=3</em>, <em>pause=0.001</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.trading.get_hist_data" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取个股历史交易记录</div></blockquote>
+<blockquote>
+<div><dl class="docutils">
+<dt>code:string</dt>
+<dd>股票代码 e.g. 600848</dd>
+<dt>start:string</dt>
+<dd>开始日期 format：YYYY-MM-DD 为空时取到API所提供的最早日期数据</dd>
+<dt>end:string</dt>
+<dd>结束日期 format：YYYY-MM-DD 为空时取到最近一个交易日数据</dd>
+<dt>ktype：string</dt>
+<dd>数据类型，D=日k线 W=周 M=月 5=5分钟 15=15分钟 30=30分钟 60=60分钟，默认为D</dd>
+<dt>retry_count <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 3</span></dt>
+<dd>如遇网络等问题重复执行的次数</dd>
+<dt>pause <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 0</span></dt>
+<dd>重复请求数据过程中暂停的秒数，防止请求间隔时间太短出现的问题</dd>
+</dl>
+</div></blockquote>
+<blockquote>
+<div><dl class="docutils">
+<dt>DataFrame</dt>
+<dd>属性:日期 ，开盘价， 最高价， 收盘价， 最低价， 成交量， 价格变动 ，涨跌幅，5日均价，10日均价，20日均价，5日均量，10日均量，20日均量，换手率</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.trading.get_hists">
+<code class="descclassname">tushare.stock.trading.</code><code class="descname">get_hists</code><span class="sig-paren">(</span><em>symbols</em>, <em>start=None</em>, <em>end=None</em>, <em>ktype='D'</em>, <em>retry_count=3</em>, <em>pause=0.001</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.trading.get_hists" title="永久链接至目标">¶</a></dt>
+<dd><p>批量获取历史行情数据，具体参数和返回数据类型请参考get_hist_data接口</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.trading.get_index">
+<code class="descclassname">tushare.stock.trading.</code><code class="descname">get_index</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.trading.get_index" title="永久链接至目标">¶</a></dt>
+<dd><p>获取大盘指数行情
+return
+——-</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>DataFrame</dt>
+<dd>code:指数代码
+name:指数名称
+change:涨跌幅
+open:开盘价
+preclose:昨日收盘价
+close:收盘价
+high:最高价
+low:最低价
+volume:成交量(手)
+amount:成交金额（亿元）</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.trading.get_instrument">
+<code class="descclassname">tushare.stock.trading.</code><code class="descname">get_instrument</code><span class="sig-paren">(</span><em>xapi=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.trading.get_instrument" title="永久链接至目标">¶</a></dt>
+<dd><p>获取证券列表</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.trading.get_k_data">
+<code class="descclassname">tushare.stock.trading.</code><code class="descname">get_k_data</code><span class="sig-paren">(</span><em>code=None</em>, <em>start=''</em>, <em>end=''</em>, <em>ktype='D'</em>, <em>autype='qfq'</em>, <em>index=False</em>, <em>retry_count=3</em>, <em>pause=0.001</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.trading.get_k_data" title="永久链接至目标">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Parameters:</dt>
+<dd><dl class="first last docutils">
+<dt>code:string</dt>
+<dd>股票代码 e.g. 600848</dd>
+<dt>start:string</dt>
+<dd>开始日期 format：YYYY-MM-DD 为空时取上市首日</dd>
+<dt>end:string</dt>
+<dd>结束日期 format：YYYY-MM-DD 为空时取最近一个交易日</dd>
+<dt>autype:string</dt>
+<dd>复权类型，qfq-前复权 hfq-后复权 None-不复权，默认为qfq</dd>
+<dt>ktype：string</dt>
+<dd>数据类型，D=日k线 W=周 M=月 5=5分钟 15=15分钟 30=30分钟 60=60分钟，默认为D</dd>
+<dt>retry_count <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 3</span></dt>
+<dd>如遇网络等问题重复执行的次数</dd>
+<dt>pause <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 0</span></dt>
+<dd>重复请求数据过程中暂停的秒数，防止请求间隔时间太短出现的问题</dd>
+</dl>
+</dd>
+</dl>
+<blockquote>
+<div><dl class="docutils">
+<dt>DataFrame</dt>
+<dd>date 交易日期 (index)
+open 开盘价
+high  最高价
+close 收盘价
+low 最低价
+volume 成交量
+amount 成交额
+turnoverratio 换手率
+code 股票代码</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.trading.get_markets">
+<code class="descclassname">tushare.stock.trading.</code><code class="descname">get_markets</code><span class="sig-paren">(</span><em>xapi=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.trading.get_markets" title="永久链接至目标">¶</a></dt>
+<dd><p>获取市场代码</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.trading.get_realtime_quotes">
+<code class="descclassname">tushare.stock.trading.</code><code class="descname">get_realtime_quotes</code><span class="sig-paren">(</span><em>symbols=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.trading.get_realtime_quotes" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div><blockquote>
+<div>获取实时交易数据 getting real time quotes data</div></blockquote>
+<p>用于跟踪交易情况（本次执行的结果-上一次执行的数据）</p>
+</div></blockquote>
+<blockquote>
+<div>symbols : string, array-like object (list, tuple, Series).</div></blockquote>
+<blockquote>
+<div><dl class="docutils">
+<dt>DataFrame 实时交易数据</dt>
+<dd><blockquote class="first">
+<div>属性:0：name，股票名字</div></blockquote>
+<p class="last">1：open，今日开盘价
+2：pre_close，昨日收盘价
+3：price，当前价格
+4：high，今日最高价
+5：low，今日最低价
+6：bid，竞买价，即“买一”报价
+7：ask，竞卖价，即“卖一”报价
+8：volumn，成交量 maybe you need do volumn/100
+9：amount，成交金额（元 CNY）
+10：b1_v，委买一（笔数 bid volume）
+11：b1_p，委买一（价格 bid price）
+12：b2_v，“买二”
+13：b2_p，“买二”
+14：b3_v，“买三”
+15：b3_p，“买三”
+16：b4_v，“买四”
+17：b4_p，“买四”
+18：b5_v，“买五”
+19：b5_p，“买五”
+20：a1_v，委卖一（笔数 ask volume）
+21：a1_p，委卖一（价格 ask price）
+…
+30：date，日期；
+31：time，时间；</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.trading.get_security">
+<code class="descclassname">tushare.stock.trading.</code><code class="descname">get_security</code><span class="sig-paren">(</span><em>api</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.trading.get_security" title="永久链接至目标">¶</a></dt>
+<dd><p>获取股票列表</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.trading.get_sina_dd">
+<code class="descclassname">tushare.stock.trading.</code><code class="descname">get_sina_dd</code><span class="sig-paren">(</span><em>code=None</em>, <em>date=None</em>, <em>vol=400</em>, <em>retry_count=3</em>, <em>pause=0.001</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.trading.get_sina_dd" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取sina大单数据</div></blockquote>
+<blockquote>
+<div><blockquote>
+<div><dl class="docutils">
+<dt>code:string</dt>
+<dd>股票代码 e.g. 600848</dd>
+<dt>date:string</dt>
+<dd>日期 format：YYYY-MM-DD</dd>
+<dt>retry_count <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 3</span></dt>
+<dd>如遇网络等问题重复执行的次数</dd>
+<dt>pause <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 0</span></dt>
+<dd>重复请求数据过程中暂停的秒数，防止请求间隔时间太短出现的问题</dd>
+</dl>
+</div></blockquote>
+<blockquote>
+<div><dl class="docutils">
+<dt>DataFrame 当日所有股票交易数据(DataFrame)</dt>
+<dd>属性:股票代码    股票名称    交易时间    价格    成交量    前一笔价格    类型（买、卖、中性盘）</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.trading.get_tick_data">
+<code class="descclassname">tushare.stock.trading.</code><code class="descname">get_tick_data</code><span class="sig-paren">(</span><em>code=None</em>, <em>date=None</em>, <em>retry_count=3</em>, <em>pause=0.001</em>, <em>src='sn'</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.trading.get_tick_data" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取分笔数据</div></blockquote>
+<blockquote>
+<div><blockquote>
+<div><dl class="docutils">
+<dt>code:string</dt>
+<dd>股票代码 e.g. 600848</dd>
+<dt>date:string</dt>
+<dd>日期 format: YYYY-MM-DD</dd>
+<dt>retry_count <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 3</span></dt>
+<dd>如遇网络等问题重复执行的次数</dd>
+<dt>pause <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 0</span></dt>
+<dd>重复请求数据过程中暂停的秒数，防止请求间隔时间太短出现的问题</dd>
+</dl>
+<p>src : 数据源选择，可输入sn(新浪)、tt(腾讯)、nt(网易)，默认sn</p>
+</div></blockquote>
+<blockquote>
+<div><dl class="docutils">
+<dt>DataFrame 当日所有股票交易数据(DataFrame)</dt>
+<dd>属性:成交时间、成交价格、价格变动，成交手、成交金额(元)，买卖类型</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.trading.get_today_all">
+<code class="descclassname">tushare.stock.trading.</code><code class="descname">get_today_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.trading.get_today_all" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>一次性获取最近一个日交易日所有股票的交易数据</div></blockquote>
+<blockquote>
+<div><dl class="docutils">
+<dt>DataFrame</dt>
+<dd>属性：代码，名称，涨跌幅，现价，开盘价，最高价，最低价，最日收盘价，成交量，换手率，成交额，市盈率，市净率，总市值，流通市值</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.trading.get_today_ticks">
+<code class="descclassname">tushare.stock.trading.</code><code class="descname">get_today_ticks</code><span class="sig-paren">(</span><em>code=None</em>, <em>retry_count=3</em>, <em>pause=0.001</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.trading.get_today_ticks" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取当日分笔明细数据</div></blockquote>
+<blockquote>
+<div><blockquote>
+<div><dl class="docutils">
+<dt>code:string</dt>
+<dd>股票代码 e.g. 600848</dd>
+<dt>retry_count <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 3</span></dt>
+<dd>如遇网络等问题重复执行的次数</dd>
+<dt>pause <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 0</span></dt>
+<dd>重复请求数据过程中暂停的秒数，防止请求间隔时间太短出现的问题</dd>
+</dl>
+</div></blockquote>
+<blockquote>
+<div><dl class="docutils">
+<dt>DataFrame 当日所有股票交易数据(DataFrame)</dt>
+<dd>属性:成交时间、成交价格、价格变动，成交手、成交金额(元)，买卖类型</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.trading.quotes">
+<code class="descclassname">tushare.stock.trading.</code><code class="descname">quotes</code><span class="sig-paren">(</span><em>symbols</em>, <em>conn=None</em>, <em>asset='E'</em>, <em>market=[]</em>, <em>retry_count=3</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.trading.quotes" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取实时快照</div></blockquote>
+<blockquote>
+<div>symbols : string, array-like object (list, tuple, Series).</div></blockquote>
+<blockquote>
+<div>DataFrame 实时快照，5档行情</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.trading.reset_instrument">
+<code class="descclassname">tushare.stock.trading.</code><code class="descname">reset_instrument</code><span class="sig-paren">(</span><em>xapi=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.trading.reset_instrument" title="永久链接至目标">¶</a></dt>
+<dd><p>重新设置本地证券列表</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.stock.trading.tick">
+<code class="descclassname">tushare.stock.trading.</code><code class="descname">tick</code><span class="sig-paren">(</span><em>code</em>, <em>conn=None</em>, <em>date=''</em>, <em>asset='E'</em>, <em>market=''</em>, <em>retry_count=3</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.stock.trading.tick" title="永久链接至目标">¶</a></dt>
+<dd><p>tick数据
+Parameters:
+————
+code:证券代码，支持股票,ETF/LOF,期货/期权,港股
+conn:服务器连接 ，通过ts.api()或者ts.xpi()获得
+date:日期
+asset:证券品种，E:沪深交易所股票和基金, INDEX:沪深交易所指数， X:其他证券品种，大致如下：</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>支持的扩展行情包括(asset=’X’)：</dt>
+<dd><p class="first">郑州商品期权         OZ 大连商品期权         OD 上海商品期权         OS
+上海个股期权         QQ 香港指数         FH 郑州商品         QZ 大连商品         QD 上海期货         QS
+香港主板         KH 香港权证         KR 开放式基金         FU 货币型基金         FB
+招商理财产品         LC 招商货币产品         LB 国际指数         FW 国内宏观指标         HG 中国概念股         CH
+美股知名公司         MG B股转H股         HB 股份转让         SB 股指期货         CZ 香港创业板         KG 香港信托基金         KT</p>
+<blockquote class="last">
+<div><dl class="docutils">
+<dt>国债预发行         GY 主力期货合约         MA</dt>
+<dd>中证指数         ZZ 港股通         GH</dd>
+</dl>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+<p>market:市场代码，通过ts.get_markets()获取</p>
+<p>DataFrame
+date:日期
+time:时间
+price:成交价
+vol:成交量
+type:买卖方向，0-买入 1-卖出 2-集合竞价成交</p>
+<blockquote>
+<div><blockquote>
+<div>期货  0:开仓  1:多开   -1:空开</div></blockquote>
+<p>期货多一列数据oi_change:增仓数据</p>
+</div></blockquote>
+</dd></dl>
+
+</div>
+<div class="section" id="module-tushare.stock">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-tushare.stock" title="永久链接至标题">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tushare.trader.html" class="btn btn-neutral float-right" title="tushare.trader package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tushare.internet.html" class="btn btn-neutral" title="tushare.internet package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, zeping.Long.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'zh_CN',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

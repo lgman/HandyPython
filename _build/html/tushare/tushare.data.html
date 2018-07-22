@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>入门 &mdash; HandyPython 0.1 文档</title>
+  <title>tushare.data package &mdash; HandyPython 0.1 文档</title>
   
 
   
@@ -28,8 +28,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="1. linux" href="01_linux.html" />
-    <link rel="prev" title="序言" href="../hello.html" /> 
+    <link rel="next" title="tushare.fund package" href="tushare.fund.html" />
+    <link rel="prev" title="tushare.coins package" href="tushare.coins.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -81,15 +81,26 @@
               <p class="caption"><span class="caption-text">目录:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../hello.html">序言</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">入门</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="01_linux.html">1. linux</a></li>
-<li class="toctree-l2"><a class="reference internal" href="02_jupyter.html">2. iPython</a></li>
-<li class="toctree-l2"><a class="reference internal" href="03_numpy.html">3. numpy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="04_matplotlib.html">4. 绘图</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Python.html">5. An Informal Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../beginning/index.html">入门</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="tushare.html">tushare package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="tushare.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="tushare.bond.html">tushare.bond package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.coins.html">tushare.coins package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">tushare.data package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#module-tushare.data">Module contents</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../tushare/tushare.html">tushare package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.fund.html">tushare.fund package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.futures.html">tushare.futures package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.internet.html">tushare.internet package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.stock.html">tushare.stock package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.trader.html">tushare.trader package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.util.html">tushare.util package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tushare.html#module-tushare">Module contents</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -135,13 +146,15 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>入门</li>
+          <li><a href="tushare.html">tushare package</a> &raquo;</li>
+        
+      <li>tushare.data package</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/beginning/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/tushare/tushare.data.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -154,27 +167,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="id1">
-<h1>入门<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<p>这一部分主要介绍数据科学的入门内容;包含数据科学的基础工具，如：Jupyter、Linux，以及 Python 基本的数据科学包 Numpy，画图包 Matplotlib;</p>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">目录:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="01_linux.html">1. linux</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_jupyter.html">2. iPython</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="02_jupyter.html#id1">2.1. 介绍</a></li>
-<li class="toctree-l2"><a class="reference internal" href="02_jupyter.html#id2">2.2. 安装</a></li>
-<li class="toctree-l2"><a class="reference internal" href="02_jupyter.html#id3">2.3. 使用方法</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="03_numpy.html">3. numpy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04_matplotlib.html">4. 绘图</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Python.html">5. An Informal Introduction to Python</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Python.html#using-python-as-a-calculator">5.1. Using Python as a Calculator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Python.html#first-steps-towards-programming">5.2. First Steps Towards Programming</a></li>
-</ul>
-</li>
-</ul>
+  <div class="section" id="tushare-data-package">
+<h1>tushare.data package<a class="headerlink" href="#tushare-data-package" title="永久链接至标题">¶</a></h1>
+<div class="section" id="module-tushare.data">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-tushare.data" title="永久链接至标题">¶</a></h2>
 </div>
 </div>
 
@@ -186,10 +182,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="01_linux.html" class="btn btn-neutral float-right" title="1. linux" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="tushare.fund.html" class="btn btn-neutral float-right" title="tushare.fund package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../hello.html" class="btn btn-neutral" title="序言" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="tushare.coins.html" class="btn btn-neutral" title="tushare.coins package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

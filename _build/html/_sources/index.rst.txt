@@ -12,7 +12,7 @@ Welcome to HandyPython's documentation!
 
    hello
    beginning/index
-
+   tushare/tushare
 
 Indices and tables
 ==================

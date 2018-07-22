@@ -1,0 +1,514 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>tushare.fund package &mdash; HandyPython 0.1 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="tushare.futures package" href="tushare.futures.html" />
+    <link rel="prev" title="tushare.data package" href="tushare.data.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> HandyPython
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../hello.html">序言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../beginning/index.html">入门</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="tushare.html">tushare package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="tushare.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="tushare.bond.html">tushare.bond package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.coins.html">tushare.coins package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.data.html">tushare.data package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">tushare.fund package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tushare.fund.cons">tushare.fund.cons module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tushare.fund.nav">tushare.fund.nav module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tushare.fund">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.futures.html">tushare.futures package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.internet.html">tushare.internet package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.stock.html">tushare.stock package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.trader.html">tushare.trader package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.util.html">tushare.util package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tushare.html#module-tushare">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">HandyPython</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="tushare.html">tushare package</a> &raquo;</li>
+        
+      <li>tushare.fund package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/tushare/tushare.fund.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tushare-fund-package">
+<h1>tushare.fund package<a class="headerlink" href="#tushare-fund-package" title="永久链接至标题">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="module-tushare.fund.cons">
+<span id="tushare-fund-cons-module"></span><h2>tushare.fund.cons module<a class="headerlink" href="#module-tushare.fund.cons" title="永久链接至标题">¶</a></h2>
+<p>Created on 2016/04/03
+&#64;author: Leo
+&#64;group : lazytech
+&#64;contact: <a class="reference external" href="mailto:lazytech&#37;&#52;&#48;sina&#46;cn">lazytech<span>&#64;</span>sina<span>&#46;</span>cn</a></p>
+<dl class="function">
+<dt id="tushare.fund.cons.FORMAT">
+<code class="descclassname">tushare.fund.cons.</code><code class="descname">FORMAT</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.fund.cons.FORMAT" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="tushare.fund.cons.FORMAT4">
+<code class="descclassname">tushare.fund.cons.</code><code class="descname">FORMAT4</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.fund.cons.FORMAT4" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-tushare.fund.nav">
+<span id="tushare-fund-nav-module"></span><h2>tushare.fund.nav module<a class="headerlink" href="#module-tushare.fund.nav" title="永久链接至标题">¶</a></h2>
+<p>获取基金净值数据接口 
+Created on 2016/04/03
+&#64;author: leo
+&#64;group : lazytech
+&#64;contact: <a class="reference external" href="mailto:lazytech&#37;&#52;&#48;sina&#46;cn">lazytech<span>&#64;</span>sina<span>&#46;</span>cn</a></p>
+<dl class="function">
+<dt id="tushare.fund.nav.get_fund_info">
+<code class="descclassname">tushare.fund.nav.</code><code class="descname">get_fund_info</code><span class="sig-paren">(</span><em>code</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.fund.nav.get_fund_info" title="永久链接至目标">¶</a></dt>
+<dd><p>获取基金基本信息
+Parameters
+——</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>code:string</dt>
+<dd>基金代码 e.g. 000001</dd>
+</dl>
+</div></blockquote>
+<blockquote>
+<div><dl class="docutils">
+<dt>DataFrame</dt>
+<dd>jjqc      基金全称
+jjjc      基金简称
+symbol    基金代码
+clrq      成立日期
+ssrq      上市日期
+xcr       存续期限
+ssdd      上市地点
+Type1Name 运作方式
+Type2Name 基金类型
+Type3Name 二级分类
+jjgm      基金规模(亿元)
+jjfe      基金总份额(亿份)
+jjltfe    上市流通份额(亿份)
+jjferq    基金份额日期
+quarter   上市季度
+glr       基金管理人
+tgr       基金托管人</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.fund.nav.get_nav_close">
+<code class="descclassname">tushare.fund.nav.</code><code class="descname">get_nav_close</code><span class="sig-paren">(</span><em>fund_type='all'</em>, <em>sub_type='all'</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.fund.nav.get_nav_close" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取封闭型基金净值数据</div></blockquote>
+<blockquote>
+<div><blockquote>
+<div><dl class="docutils">
+<dt>type:string</dt>
+<dd><dl class="first last docutils">
+<dt>封闭基金类型:</dt>
+<dd><ol class="first last arabic simple">
+<li>all      所有封闭型基金</li>
+<li>fbqy     封闭-权益</li>
+<li>fbzq     封闭债券</li>
+</ol>
+</dd>
+</dl>
+</dd>
+<dt>sub_type:string</dt>
+<dd><p class="first">基金子类型:</p>
+<blockquote class="last">
+<div><ol class="arabic simple">
+<li>type=all sub_type无效</li>
+<li><dl class="first docutils">
+<dt>type=fbqy 封闭-权益</dt>
+<dd><a href="#id1"><span class="problematic" id="id2">*</span></a>all    全部封闭权益
+<a href="#id3"><span class="problematic" id="id4">*</span></a>ct     传统封基
+<a href="#id5"><span class="problematic" id="id6">*</span></a>cx     创新封基</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>type=fbzq  封闭债券</dt>
+<dd><a href="#id7"><span class="problematic" id="id8">*</span></a>all    全部封闭债券
+<a href="#id9"><span class="problematic" id="id10">*</span></a>wj     稳健债券型
+<a href="#id11"><span class="problematic" id="id12">*</span></a>jj     激进债券型
+<a href="#id13"><span class="problematic" id="id14">*</span></a>cz     纯债债券型</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+<blockquote>
+<div><dl class="docutils">
+<dt>DataFrame</dt>
+<dd><dl class="first last docutils">
+<dt>开放型基金净值数据(DataFrame):</dt>
+<dd>symbol      基金代码
+sname       基金名称
+per_nav     单位净值
+total_nav   累计净值
+nav_rate    增长率(%)
+discount_rate 折溢价率(%)
+nav_date    净值日期
+start_date  成立日期
+end_date    到期日期
+fund_manager 基金经理
+jjlx        基金类型
+jjzfe       基金总份额</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.fund.nav.get_nav_grading">
+<code class="descclassname">tushare.fund.nav.</code><code class="descname">get_nav_grading</code><span class="sig-paren">(</span><em>fund_type='all'</em>, <em>sub_type='all'</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.fund.nav.get_nav_grading" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取分级子基金净值数据</div></blockquote>
+<blockquote>
+<div><blockquote>
+<div><dl class="docutils">
+<dt>type:string</dt>
+<dd><dl class="first last docutils">
+<dt>封闭基金类型:</dt>
+<dd><ol class="first last arabic simple">
+<li>all      所有分级基金</li>
+<li>fjgs     分级-固收</li>
+<li>fjgg     分级-杠杆</li>
+</ol>
+</dd>
+</dl>
+</dd>
+<dt>sub_type:string</dt>
+<dd><dl class="first last docutils">
+<dt>基金子类型(type=all sub_type无效):</dt>
+<dd><a href="#id15"><span class="problematic" id="id16">*</span></a>all    全部分级债券
+<a href="#id17"><span class="problematic" id="id18">*</span></a>wjzq   稳健债券型
+<a href="#id19"><span class="problematic" id="id20">*</span></a>czzq   纯债债券型
+<a href="#id21"><span class="problematic" id="id22">*</span></a>jjzq   激进债券型
+<a href="#id23"><span class="problematic" id="id24">*</span></a>gp     股票型
+<a href="#id25"><span class="problematic" id="id26">*</span></a>zs     指数型</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+<blockquote>
+<div><dl class="docutils">
+<dt>DataFrame</dt>
+<dd><dl class="first last docutils">
+<dt>开放型基金净值数据(DataFrame):</dt>
+<dd>symbol      基金代码
+sname       基金名称
+per_nav     单位净值
+total_nav   累计净值
+nav_rate    增长率(%)
+discount_rate 折溢价率(%)
+nav_date    净值日期
+start_date  成立日期
+end_date    到期日期
+fund_manager 基金经理
+jjlx        基金类型
+jjzfe       基金总份额</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.fund.nav.get_nav_history">
+<code class="descclassname">tushare.fund.nav.</code><code class="descname">get_nav_history</code><span class="sig-paren">(</span><em>code</em>, <em>start=None</em>, <em>end=None</em>, <em>retry_count=3</em>, <em>pause=0.001</em>, <em>timeout=10</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.fund.nav.get_nav_history" title="永久链接至目标">¶</a></dt>
+<dd><p>获取历史净值数据
+Parameters
+——</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>code:string</dt>
+<dd>基金代码 e.g. 000001</dd>
+<dt>start:string</dt>
+<dd>开始日期 format：YYYY-MM-DD 为空时取当前日期</dd>
+<dt>end:string</dt>
+<dd>结束日期 format：YYYY-MM-DD 为空时取去年今日</dd>
+<dt>retry_count <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 3</span></dt>
+<dd>如遇网络等问题重复执行的次数</dd>
+<dt>pause <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 0</span></dt>
+<dd>重复请求数据过程中暂停的秒数，防止请求间隔时间太短出现的问题</dd>
+<dt>timeout: int 默认 10s</dt>
+<dd>请求大量数据时的网络超时</dd>
+</dl>
+</div></blockquote>
+<blockquote>
+<div><dl class="docutils">
+<dt>DataFrame</dt>
+<dd>date 发布日期 (index)
+value 基金净值(股票/混合/QDII型基金) / 年华收益(货币/债券基金)
+total 累计净值(股票/混合/QDII型基金) / 万分收益(货币/债券基金)
+change 净值增长率(股票/混合/QDII型基金)</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.fund.nav.get_nav_open">
+<code class="descclassname">tushare.fund.nav.</code><code class="descname">get_nav_open</code><span class="sig-paren">(</span><em>fund_type='all'</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.fund.nav.get_nav_open" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>获取开放型基金净值数据</div></blockquote>
+<blockquote>
+<div><blockquote>
+<div><dl class="docutils">
+<dt>type:string</dt>
+<dd><dl class="first last docutils">
+<dt>开放基金类型:</dt>
+<dd><ol class="first last arabic simple">
+<li>all          所有开放基金</li>
+<li>equity       股票型开放基金</li>
+<li>mix          混合型开放基金</li>
+<li>bond         债券型开放基金</li>
+<li>monetary     货币型开放基金</li>
+<li>qdii         QDII型开放基金</li>
+</ol>
+</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+<blockquote>
+<div><dl class="docutils">
+<dt>DataFrame</dt>
+<dd><dl class="first last docutils">
+<dt>开放型基金净值数据(DataFrame):</dt>
+<dd>symbol      基金代码
+sname       基金名称
+per_nav     单位净值
+total_nav   累计净值
+yesterday_nav  前一日净值
+nav_a       涨跌额
+nav_rate    增长率(%)
+nav_date    净值日期
+fund_manager 基金经理
+jjlx        基金类型
+jjzfe       基金总份额</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+</div>
+<div class="section" id="module-tushare.fund">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-tushare.fund" title="永久链接至标题">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tushare.futures.html" class="btn btn-neutral float-right" title="tushare.futures package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tushare.data.html" class="btn btn-neutral" title="tushare.data package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, zeping.Long.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'zh_CN',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,447 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>tushare.trader package &mdash; HandyPython 0.1 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="tushare.util package" href="tushare.util.html" />
+    <link rel="prev" title="tushare.stock package" href="tushare.stock.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> HandyPython
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../hello.html">序言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../beginning/index.html">入门</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="tushare.html">tushare package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="tushare.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="tushare.bond.html">tushare.bond package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.coins.html">tushare.coins package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.data.html">tushare.data package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.fund.html">tushare.fund package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.futures.html">tushare.futures package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.internet.html">tushare.internet package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.stock.html">tushare.stock package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">tushare.trader package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tushare.trader.trader">tushare.trader.trader module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tushare.trader.utils">tushare.trader.utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tushare.trader.vars">tushare.trader.vars module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tushare.trader">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.util.html">tushare.util package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tushare.html#module-tushare">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">HandyPython</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="tushare.html">tushare package</a> &raquo;</li>
+        
+      <li>tushare.trader package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/tushare/tushare.trader.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tushare-trader-package">
+<h1>tushare.trader package<a class="headerlink" href="#tushare-trader-package" title="永久链接至标题">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="module-tushare.trader.trader">
+<span id="tushare-trader-trader-module"></span><h2>tushare.trader.trader module<a class="headerlink" href="#module-tushare.trader.trader" title="永久链接至标题">¶</a></h2>
+<p>Created on 2016年9月25日
+&#64;author: Jimmy Liu
+&#64;group : waditu
+&#64;contact: <a class="reference external" href="mailto:jimmysoa&#37;&#52;&#48;sina&#46;cn">jimmysoa<span>&#64;</span>sina<span>&#46;</span>cn</a></p>
+<dl class="exception">
+<dt id="tushare.trader.trader.NotLoginError">
+<em class="property">exception </em><code class="descclassname">tushare.trader.trader.</code><code class="descname">NotLoginError</code><span class="sig-paren">(</span><em>result=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.trader.trader.NotLoginError" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(在 Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+<dl class="method">
+<dt id="tushare.trader.trader.NotLoginError.heartbeat">
+<code class="descname">heartbeat</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tushare.trader.trader.NotLoginError.heartbeat" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="tushare.trader.trader.TraderAPI">
+<em class="property">class </em><code class="descclassname">tushare.trader.trader.</code><code class="descname">TraderAPI</code><span class="sig-paren">(</span><em>broker=''</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.trader.trader.TraderAPI" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(在 Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>股票实盘交易接口
+提醒：本文涉及的思路和内容仅限于量化投资及程序化交易的研究与尝试，不作为个人或机构常规程序化交易的依据，
+不对实盘的交易风险和政策风险产生的影响负责，如有问题请与我联系。
+投资有风险，下单须谨慎。</p>
+<dl class="method">
+<dt id="tushare.trader.trader.TraderAPI.baseinfo">
+<code class="descname">baseinfo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tushare.trader.trader.TraderAPI.baseinfo" title="永久链接至目标">¶</a></dt>
+<dd><dl class="docutils">
+<dt>获取帐户基本信息</dt>
+<dd>fundid:帐户ID
+gpsz: 股票市值
+fundvalue:基金市值
+jihelicai:集合理财
+fundbal:帐户余额
+marketvalue:总资产
+fundavl:可用余额
+daixiao:代销份额
+otc:OTC份额</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="tushare.trader.trader.TraderAPI.buy">
+<code class="descname">buy</code><span class="sig-paren">(</span><em>stkcode</em>, <em>price=0</em>, <em>count=0</em>, <em>amount=0</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.trader.trader.TraderAPI.buy" title="永久链接至目标">¶</a></dt>
+<dd><dl class="docutils">
+<dt>买入证券</dt>
+<dd>stkcode:股票代码，string
+pricce:委托价格，int
+count:买入数量
+amount:买入金额</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="tushare.trader.trader.TraderAPI.cancel">
+<code class="descname">cancel</code><span class="sig-paren">(</span><em>ordersno=''</em>, <em>orderdate=''</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.trader.trader.TraderAPI.cancel" title="永久链接至目标">¶</a></dt>
+<dd><blockquote>
+<div>撤单</div></blockquote>
+<p>ordersno:委托单号，多个以逗号分隔，e.g. 1866,1867
+orderdata:委托日期 YYYYMMDD，多个以逗号分隔，对应委托单好
+return
+————
+string</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tushare.trader.trader.TraderAPI.check_login_status">
+<code class="descname">check_login_status</code><span class="sig-paren">(</span><em>return_data</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.trader.trader.TraderAPI.check_login_status" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tushare.trader.trader.TraderAPI.deal_list">
+<code class="descname">deal_list</code><span class="sig-paren">(</span><em>begin=None</em>, <em>end=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.trader.trader.TraderAPI.deal_list" title="永久链接至目标">¶</a></dt>
+<dd><dl class="docutils">
+<dt>获取成交列表</dt>
+<dd><p class="first">begin:开始日期  YYYYMMDD
+end:结束日期  YYYYMMDD</p>
+<p class="last">ordersno:委托单号
+matchcode:成交编号
+trddate:交易日期
+matchtime:交易时间
+stkcode:证券代码
+stkname:证券名称
+bsflagState:买卖标志
+orderprice:委托价格
+matchprice:成交价格
+orderqty:委托数量
+matchqty:成交数量
+matchamt:成交金额</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="tushare.trader.trader.TraderAPI.entrust_list">
+<code class="descname">entrust_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tushare.trader.trader.TraderAPI.entrust_list" title="永久链接至目标">¶</a></dt>
+<dd><p>获取委托单列表
+return:DataFrame
+———-
+ordersno:委托单号
+stkcode:证券代码
+stkname:证券名称
+bsflagState:买卖标志
+orderqty:委托数量
+matchqty:成交数量
+orderprice:委托价格
+operdate:交易日期
+opertime:交易时间
+orderdate:下单日期
+state:状态</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tushare.trader.trader.TraderAPI.exit">
+<code class="descname">exit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tushare.trader.trader.TraderAPI.exit" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tushare.trader.trader.TraderAPI.heartbeat">
+<code class="descname">heartbeat</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tushare.trader.trader.TraderAPI.heartbeat" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tushare.trader.trader.TraderAPI.keepalive">
+<code class="descname">keepalive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tushare.trader.trader.TraderAPI.keepalive" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tushare.trader.trader.TraderAPI.login">
+<code class="descname">login</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tushare.trader.trader.TraderAPI.login" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tushare.trader.trader.TraderAPI.position">
+<code class="descname">position</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tushare.trader.trader.TraderAPI.position" title="永久链接至目标">¶</a></dt>
+<dd><dl class="docutils">
+<dt>获取持仓列表</dt>
+<dd>stkcode:证券代码
+stkname:证券名称
+stkqty :证券数量
+stkavl :可用数量
+lastprice:最新价格
+costprice:成本价
+income :参考盈亏（元）</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="tushare.trader.trader.TraderAPI.sell">
+<code class="descname">sell</code><span class="sig-paren">(</span><em>stkcode</em>, <em>price=0</em>, <em>count=0</em>, <em>amount=0</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.trader.trader.TraderAPI.sell" title="永久链接至目标">¶</a></dt>
+<dd><dl class="docutils">
+<dt>卖出证券</dt>
+<dd>stkcode:股票代码，string
+pricce:委托价格，int
+count:卖出数量
+amount:卖出金额</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="tushare.trader.trader.TraderAPI.send_heartbeat">
+<code class="descname">send_heartbeat</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tushare.trader.trader.TraderAPI.send_heartbeat" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tushare.trader.utils">
+<span id="tushare-trader-utils-module"></span><h2>tushare.trader.utils module<a class="headerlink" href="#module-tushare.trader.utils" title="永久链接至标题">¶</a></h2>
+<p>Created on 2016年10月1日
+&#64;author: Jimmy Liu
+&#64;group : waditu
+&#64;contact: <a class="reference external" href="mailto:jimmysoa&#37;&#52;&#48;sina&#46;cn">jimmysoa<span>&#64;</span>sina<span>&#46;</span>cn</a></p>
+<dl class="function">
+<dt id="tushare.trader.utils.get_jdata">
+<code class="descclassname">tushare.trader.utils.</code><code class="descname">get_jdata</code><span class="sig-paren">(</span><em>txtdata</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.trader.utils.get_jdata" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="tushare.trader.utils.get_vcode">
+<code class="descclassname">tushare.trader.utils.</code><code class="descname">get_vcode</code><span class="sig-paren">(</span><em>broker</em>, <em>res</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.trader.utils.get_vcode" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="tushare.trader.utils.nowtime_str">
+<code class="descclassname">tushare.trader.utils.</code><code class="descname">nowtime_str</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tushare.trader.utils.nowtime_str" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-tushare.trader.vars">
+<span id="tushare-trader-vars-module"></span><h2>tushare.trader.vars module<a class="headerlink" href="#module-tushare.trader.vars" title="永久链接至标题">¶</a></h2>
+<p>Created on 2016/09/31
+&#64;author: Jimmy Liu
+&#64;group : waditu
+&#64;contact: <a class="reference external" href="mailto:jimmysoa&#37;&#52;&#48;sina&#46;cn">jimmysoa<span>&#64;</span>sina<span>&#46;</span>cn</a></p>
+</div>
+<div class="section" id="module-tushare.trader">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-tushare.trader" title="永久链接至标题">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tushare.util.html" class="btn btn-neutral float-right" title="tushare.util package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tushare.stock.html" class="btn btn-neutral" title="tushare.stock package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, zeping.Long.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'zh_CN',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

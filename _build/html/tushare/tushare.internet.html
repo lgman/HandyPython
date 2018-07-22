@@ -1,0 +1,488 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>tushare.internet package &mdash; HandyPython 0.1 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="tushare.stock package" href="tushare.stock.html" />
+    <link rel="prev" title="tushare.futures package" href="tushare.futures.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> HandyPython
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../hello.html">序言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../beginning/index.html">入门</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="tushare.html">tushare package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="tushare.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="tushare.bond.html">tushare.bond package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.coins.html">tushare.coins package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.data.html">tushare.data package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.fund.html">tushare.fund package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.futures.html">tushare.futures package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">tushare.internet package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tushare.internet.boxoffice">tushare.internet.boxoffice module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tushare.internet.caixinnews">tushare.internet.caixinnews module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tushare.internet.indexes">tushare.internet.indexes module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tushare.internet">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.stock.html">tushare.stock package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.trader.html">tushare.trader package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tushare.util.html">tushare.util package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tushare.html#module-tushare">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">HandyPython</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="tushare.html">tushare package</a> &raquo;</li>
+        
+      <li>tushare.internet package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/tushare/tushare.internet.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tushare-internet-package">
+<h1>tushare.internet package<a class="headerlink" href="#tushare-internet-package" title="永久链接至标题">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="module-tushare.internet.boxoffice">
+<span id="tushare-internet-boxoffice-module"></span><h2>tushare.internet.boxoffice module<a class="headerlink" href="#module-tushare.internet.boxoffice" title="永久链接至标题">¶</a></h2>
+<p>电影票房 
+Created on 2015/12/24
+&#64;author: Jimmy Liu
+&#64;group : waditu
+&#64;contact: <a class="reference external" href="mailto:jimmysoa&#37;&#52;&#48;sina&#46;cn">jimmysoa<span>&#64;</span>sina<span>&#46;</span>cn</a></p>
+<dl class="function">
+<dt id="tushare.internet.boxoffice.day_boxoffice">
+<code class="descclassname">tushare.internet.boxoffice.</code><code class="descname">day_boxoffice</code><span class="sig-paren">(</span><em>date=None</em>, <em>retry_count=3</em>, <em>pause=0.001</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.internet.boxoffice.day_boxoffice" title="永久链接至目标">¶</a></dt>
+<dd><p>获取单日电影票房数据
+数据来源：EBOT艺恩票房智库
+Parameters
+——</p>
+<blockquote>
+<div><blockquote>
+<div><p>date:日期，默认为上一日
+retry_count : int, 默认 3</p>
+<blockquote>
+<div>如遇网络等问题重复执行的次数</div></blockquote>
+<dl class="docutils">
+<dt>pause <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 0</span></dt>
+<dd>重复请求数据过程中暂停的秒数，防止请求间隔时间太短出现的问题</dd>
+</dl>
+</div></blockquote>
+<blockquote>
+<div><dl class="docutils">
+<dt>DataFrame </dt>
+<dd>AvgPrice      平均票价
+AvpPeoPle     场均人次
+BoxOffice     单日票房（万）
+BoxOffice_Up  环比变化 （%）
+IRank         排名
+MovieDay      上映天数
+MovieName     影片名 
+SumBoxOffice  累计票房（万） 
+WomIndex      口碑指数</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.internet.boxoffice.day_cinema">
+<code class="descclassname">tushare.internet.boxoffice.</code><code class="descname">day_cinema</code><span class="sig-paren">(</span><em>date=None</em>, <em>retry_count=3</em>, <em>pause=0.001</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.internet.boxoffice.day_cinema" title="永久链接至目标">¶</a></dt>
+<dd><p>获取影院单日票房排行数据
+数据来源：EBOT艺恩票房智库
+Parameters
+——</p>
+<blockquote>
+<div><blockquote>
+<div><p>date:日期，默认为上一日
+retry_count : int, 默认 3</p>
+<blockquote>
+<div>如遇网络等问题重复执行的次数</div></blockquote>
+<dl class="docutils">
+<dt>pause <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 0</span></dt>
+<dd>重复请求数据过程中暂停的秒数，防止请求间隔时间太短出现的问题</dd>
+</dl>
+</div></blockquote>
+<blockquote>
+<div><dl class="docutils">
+<dt>DataFrame </dt>
+<dd>Attendance         上座率
+AvgPeople          场均人次
+CinemaName         影院名称  
+RowNum             排名
+TodayAudienceCount 当日观众人数
+TodayBox           当日票房
+TodayShowCount     当日场次
+price              场均票价（元）</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.internet.boxoffice.month_boxoffice">
+<code class="descclassname">tushare.internet.boxoffice.</code><code class="descname">month_boxoffice</code><span class="sig-paren">(</span><em>date=None</em>, <em>retry_count=3</em>, <em>pause=0.001</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.internet.boxoffice.month_boxoffice" title="永久链接至目标">¶</a></dt>
+<dd><p>获取单月电影票房数据
+数据来源：EBOT艺恩票房智库
+Parameters
+——</p>
+<blockquote>
+<div><blockquote>
+<div><p>date:日期，默认为上一月，格式YYYY-MM
+retry_count : int, 默认 3</p>
+<blockquote>
+<div>如遇网络等问题重复执行的次数</div></blockquote>
+<dl class="docutils">
+<dt>pause <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 0</span></dt>
+<dd>重复请求数据过程中暂停的秒数，防止请求间隔时间太短出现的问题</dd>
+</dl>
+</div></blockquote>
+<blockquote>
+<div><dl class="docutils">
+<dt>DataFrame </dt>
+<dd>Irank         排名
+MovieName     电影名称
+WomIndex      口碑指数
+avgboxoffice  平均票价
+avgshowcount  场均人次
+box_pro       月度占比
+boxoffice     单月票房(万)     
+days          月内天数
+releaseTime   上映日期</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.internet.boxoffice.realtime_boxoffice">
+<code class="descclassname">tushare.internet.boxoffice.</code><code class="descname">realtime_boxoffice</code><span class="sig-paren">(</span><em>retry_count=3</em>, <em>pause=0.001</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.internet.boxoffice.realtime_boxoffice" title="永久链接至目标">¶</a></dt>
+<dd><p>获取实时电影票房数据
+数据来源：EBOT艺恩票房智库
+Parameters
+——</p>
+<blockquote>
+<div><blockquote>
+<div><dl class="docutils">
+<dt>retry_count <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 3</span></dt>
+<dd>如遇网络等问题重复执行的次数</dd>
+<dt>pause <span class="classifier-delimiter">:</span> <span class="classifier">int, 默认 0</span></dt>
+<dd>重复请求数据过程中暂停的秒数，防止请求间隔时间太短出现的问题</dd>
+</dl>
+</div></blockquote>
+<blockquote>
+<div><dl class="docutils">
+<dt>DataFrame </dt>
+<dd>BoxOffice     实时票房（万） 
+Irank         排名
+MovieName     影片名 
+boxPer        票房占比 （%）
+movieDay      上映天数
+sumBoxOffice  累计票房（万） 
+time          数据获取时间</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+</div>
+<div class="section" id="module-tushare.internet.caixinnews">
+<span id="tushare-internet-caixinnews-module"></span><h2>tushare.internet.caixinnews module<a class="headerlink" href="#module-tushare.internet.caixinnews" title="永久链接至标题">¶</a></h2>
+<p>财新网新闻数据检索下载
+Created on 2017/06/09
+&#64;author: Yuan Yifan
+&#64;group : ~
+&#64;contact: <a class="reference external" href="mailto:tsingjyujing&#37;&#52;&#48;163&#46;com">tsingjyujing<span>&#64;</span>163<span>&#46;</span>com</a></p>
+<dl class="function">
+<dt id="tushare.internet.caixinnews.get_soup">
+<code class="descclassname">tushare.internet.caixinnews.</code><code class="descname">get_soup</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.internet.caixinnews.get_soup" title="永久链接至目标">¶</a></dt>
+<dd><p>读取URL对应的内容，并解析为Soup
+Parameters</p>
+<blockquote>
+<div>url string 需要读取的链接</div></blockquote>
+<dl class="docutils">
+<dt>Return</dt>
+<dd>string 读取的内容</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.internet.caixinnews.is_blog">
+<code class="descclassname">tushare.internet.caixinnews.</code><code class="descname">is_blog</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.internet.caixinnews.is_blog" title="永久链接至目标">¶</a></dt>
+<dd><p>判断某一链接是否博客
+Parameters
+——</p>
+<blockquote>
+<div>url string 需要判断的链接</div></blockquote>
+<blockquote>
+<div>bool 该url是否是博客URL</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.internet.caixinnews.query_news">
+<code class="descclassname">tushare.internet.caixinnews.</code><code class="descname">query_news</code><span class="sig-paren">(</span><em>keywords='*'</em>, <em>start_date=None</em>, <em>end_date=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.internet.caixinnews.query_news" title="永久链接至目标">¶</a></dt>
+<dd><p>读取某一时间段对应的新闻链接列表
+Parameters
+——</p>
+<blockquote>
+<div>keywords string 关键词
+start_date string 开始日期，格式yyyy-mm-dd
+end_date string 结束日期，格式yyyy-mm-dd</div></blockquote>
+<blockquote>
+<div>List&lt;string&gt; 读取的内容</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.internet.caixinnews.read_blog">
+<code class="descclassname">tushare.internet.caixinnews.</code><code class="descname">read_blog</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.internet.caixinnews.read_blog" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="tushare.internet.caixinnews.read_normal_artical">
+<code class="descclassname">tushare.internet.caixinnews.</code><code class="descname">read_normal_artical</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.internet.caixinnews.read_normal_artical" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="tushare.internet.caixinnews.read_page">
+<code class="descclassname">tushare.internet.caixinnews.</code><code class="descname">read_page</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.internet.caixinnews.read_page" title="永久链接至目标">¶</a></dt>
+<dd><p>读取链接的内容
+Parameters
+——</p>
+<blockquote>
+<div>url string 需要判断的链接</div></blockquote>
+<blockquote>
+<div>title string 文章标题
+text string 文章内容</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="tushare.internet.caixinnews.read_url">
+<code class="descclassname">tushare.internet.caixinnews.</code><code class="descname">read_url</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.internet.caixinnews.read_url" title="永久链接至目标">¶</a></dt>
+<dd><p>读取URL对应的内容（模拟浏览器）
+Parameters
+——</p>
+<blockquote>
+<div>url string 需要读取的链接</div></blockquote>
+<blockquote>
+<div>string 读取的内容</div></blockquote>
+</dd></dl>
+
+</div>
+<div class="section" id="module-tushare.internet.indexes">
+<span id="tushare-internet-indexes-module"></span><h2>tushare.internet.indexes module<a class="headerlink" href="#module-tushare.internet.indexes" title="永久链接至标题">¶</a></h2>
+<p>龙虎榜数据
+Created on 2017年8月13日
+&#64;author: Jimmy Liu
+&#64;group : waditu
+&#64;contact: <a class="reference external" href="mailto:jimmysoa&#37;&#52;&#48;sina&#46;cn">jimmysoa<span>&#64;</span>sina<span>&#46;</span>cn</a></p>
+<dl class="function">
+<dt id="tushare.internet.indexes.bdi">
+<code class="descclassname">tushare.internet.indexes.</code><code class="descname">bdi</code><span class="sig-paren">(</span><em>itype='D'</em>, <em>retry_count=3</em>, <em>pause=0.001</em><span class="sig-paren">)</span><a class="headerlink" href="#tushare.internet.indexes.bdi" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-tushare.internet">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-tushare.internet" title="永久链接至标题">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tushare.stock.html" class="btn btn-neutral float-right" title="tushare.stock package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tushare.futures.html" class="btn btn-neutral" title="tushare.futures package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, zeping.Long.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'zh_CN',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
