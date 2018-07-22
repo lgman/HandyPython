@@ -11,4 +11,4 @@
    01_linux
    02_jupyter
    03_numpy
-   readme.md
+   04_matplotlib
