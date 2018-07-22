@@ -8,7 +8,7 @@ Welcome to HandyPython's documentation!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: 目录:
 
    hello
    beginning/index

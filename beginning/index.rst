@@ -6,7 +6,7 @@
 .. toctree::
    :maxdepth: 2
    :numbered: 2
-   :caption: Contents:
+   :caption: 目录:
 
    01_linux
    02_jupyter
