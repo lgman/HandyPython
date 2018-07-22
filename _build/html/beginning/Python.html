@@ -1,0 +1,1082 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>5. An Informal Introduction to Python &mdash; HandyPython 0.1 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="prev" title="4. 绘图" href="04_matplotlib.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> HandyPython
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../hello.html">序言</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">入门</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_linux.html">1. linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_jupyter.html">2. iPython</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_numpy.html">3. numpy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_matplotlib.html">4. 绘图</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5. An Informal Introduction to Python</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#using-python-as-a-calculator">5.1. Using Python as a Calculator</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#numbers">Numbers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#strings">Strings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lists">Lists</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#first-steps-towards-programming">5.2. First Steps Towards Programming</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">HandyPython</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">入门</a> &raquo;</li>
+        
+      <li>5. An Informal Introduction to Python</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/beginning/Python.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="an-informal-introduction-to-python">
+<h1>5. An Informal Introduction to Python<a class="headerlink" href="#an-informal-introduction-to-python" title="永久链接至标题">¶</a></h1>
+<p>[The <a class="reference external" href="https://docs.python.org/3.5/tutorial/introduction.html">source
+material</a> is
+from Python 3.5.1, but the contents of this tutorial should apply to
+almost any version of Python 3]</p>
+<p>Many of the examples in this manual, even those entered at the
+interactive prompt, include comments. Comments in Python start with the
+hash character, <code class="docutils literal notranslate"><span class="pre">#</span></code>, and extend to the end of the physical line. A
+comment may appear at the start of a line or following whitespace or
+code, but not within a string literal. A hash character within a string
+literal is just a hash character. Since comments are to clarify code and
+are not interpreted by Python, they may be omitted when typing in
+examples.</p>
+<p>Some examples:</p>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is the first comment</span>
+<span class="n">spam</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># and this is the second comment</span>
+          <span class="c1"># ... and now a third!</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;# This is not a comment because it&#39;s inside quotes.&quot;</span>
+</pre></div>
+</div>
+<div class="section" id="using-python-as-a-calculator">
+<h2>5.1. Using Python as a Calculator<a class="headerlink" href="#using-python-as-a-calculator" title="永久链接至标题">¶</a></h2>
+<p>Let’s try some simple Python commands.</p>
+<div class="section" id="numbers">
+<h3>Numbers<a class="headerlink" href="#numbers" title="永久链接至标题">¶</a></h3>
+<p>The interpreter acts as a simple calculator: you can type an expression
+at it and it will write the value. Expression syntax is straightforward:
+the operators <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code> and <code class="docutils literal notranslate"><span class="pre">/</span></code> work just like in most other
+languages (for example, Pascal or C); parentheses (<code class="docutils literal notranslate"><span class="pre">()</span></code>) can be used
+for grouping. For example:</p>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span>
+</pre></div>
+</div>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">50</span> <span class="o">-</span> <span class="mi">5</span><span class="o">*</span><span class="mi">6</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">20</span>
+</pre></div>
+</div>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">50</span> <span class="o">-</span> <span class="mi">5</span><span class="o">*</span><span class="mi">6</span><span class="p">)</span> <span class="o">/</span> <span class="mi">4</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">5.0</span>
+</pre></div>
+</div>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">8</span> <span class="o">/</span> <span class="mi">5</span>  <span class="c1"># Division always returns a floating point number.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.6</span>
+</pre></div>
+</div>
+<p>The integer numbers (e.g. <code class="docutils literal notranslate"><span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">4</span></code>, <code class="docutils literal notranslate"><span class="pre">20</span></code>) have type
+<code class="docutils literal notranslate"><span class="pre">`int</span></code> &lt;<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#int">https://docs.python.org/3.5/library/functions.html#int</a>&gt;`__,
+the ones with a fractional part (e.g. <code class="docutils literal notranslate"><span class="pre">5.0</span></code>, <code class="docutils literal notranslate"><span class="pre">1.6</span></code>) have type
+<code class="docutils literal notranslate"><span class="pre">`float</span></code> &lt;<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#float">https://docs.python.org/3.5/library/functions.html#float</a>&gt;`__.
+We will see more about numeric types later in the tutorial.</p>
+<p>Division (<code class="docutils literal notranslate"><span class="pre">/</span></code>) always returns a float. To do <a class="reference external" href="https://docs.python.org/3.5/glossary.html#term-floor-division">floor
+division</a>
+and get an integer result (discarding any fractional result) you can use
+the <code class="docutils literal notranslate"><span class="pre">//</span></code> operator; to calculate the remainder you can use <code class="docutils literal notranslate"><span class="pre">%</span></code>:</p>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">17</span> <span class="o">/</span> <span class="mi">3</span>  <span class="c1"># Classic division returns a float.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">5.666666666666667</span>
+</pre></div>
+</div>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">17</span> <span class="o">//</span> <span class="mi">3</span>  <span class="c1"># Floor division discards the fractional part.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span>
+</pre></div>
+</div>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">17</span> <span class="o">%</span> <span class="mi">3</span>  <span class="c1"># The % operator returns the remainder of the division.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span>
+</pre></div>
+</div>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span>  <span class="c1"># result * divisor + remainder</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">17</span>
+</pre></div>
+</div>
+<p>With Python, it is possible to use the <code class="docutils literal notranslate"><span class="pre">**</span></code> operator to calculate
+powers:</p>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">**</span> <span class="mi">2</span>  <span class="c1"># 5 squared</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">25</span>
+</pre></div>
+</div>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">**</span> <span class="mi">7</span>  <span class="c1"># 2 to the power of 7</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">128</span>
+</pre></div>
+</div>
+<p>Do note that <code class="docutils literal notranslate"><span class="pre">**</span></code> has higher precedence than <code class="docutils literal notranslate"><span class="pre">-</span></code>, so if you want a
+negative base you will need parentheses:</p>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mi">3</span><span class="o">**</span><span class="mi">2</span>  <span class="c1"># Same as -(3**2)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mi">9</span>
+</pre></div>
+</div>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">9</span>
+</pre></div>
+</div>
+<p>The equal sign (<code class="docutils literal notranslate"><span class="pre">=</span></code>) is used to assign a value to a variable.
+Afterwards, no result is displayed before the next interactive prompt:</p>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">width</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">height</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">9</span>
+<span class="n">width</span> <span class="o">*</span> <span class="n">height</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">900</span>
+</pre></div>
+</div>
+<p>If a variable is not defined (assigned a value), trying to use it will
+give you an error:</p>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n</span>  <span class="c1"># Try to access an undefined variable.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">---------------------------------------------------------------------------</span>
+
+<span class="ne">NameError</span>                                 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">15</span><span class="o">-</span><span class="mi">3</span><span class="n">f95c5a59d25</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span><span class="p">()</span>
+<span class="o">----&gt;</span> <span class="mi">1</span> <span class="n">n</span>  <span class="c1"># Try to access an undefined variable.</span>
+
+
+<span class="ne">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s1">&#39;n&#39;</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span>
+</pre></div>
+</div>
+<p>There is full support for floating point; operators with mixed type
+operands convert the integer operand to floating point:</p>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">*</span> <span class="mf">3.75</span> <span class="o">/</span> <span class="mf">1.5</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">7.5</span>
+</pre></div>
+</div>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">7.0</span> <span class="o">/</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">3.5</span>
+</pre></div>
+</div>
+<p>In interactive mode, the last printed expression is assigned to the
+variable <code class="docutils literal notranslate"><span class="pre">_</span></code>. This means that when you are using Python as a desk
+calculator, it is somewhat easier to continue calculations, for example:</p>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tax</span> <span class="o">=</span> <span class="mf">12.5</span> <span class="o">/</span> <span class="mi">100</span>
+<span class="n">price</span> <span class="o">=</span> <span class="mf">100.50</span>
+<span class="n">price</span> <span class="o">*</span> <span class="n">tax</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">12.5625</span>
+</pre></div>
+</div>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">price</span> <span class="o">+</span> <span class="n">_</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">113.0625</span>
+</pre></div>
+</div>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">113.06</span>
+</pre></div>
+</div>
+<p>This variable should be treated as read-only by the user. Don’t
+explicitly assign a value to it, you would create an independent local
+variable with the same name masking the built-in variable with its magic
+behavior.</p>
+<p>In addition to <code class="docutils literal notranslate"><span class="pre">int</span></code> and <code class="docutils literal notranslate"><span class="pre">float</span></code>, Python supports other types of
+numbers, such as
+<code class="docutils literal notranslate"><span class="pre">`Decimal</span></code> &lt;<a class="reference external" href="https://docs.python.org/3.5/library/decimal.html#decimal.Decimal">https://docs.python.org/3.5/library/decimal.html#decimal.Decimal</a>&gt;`__
+and
+<code class="docutils literal notranslate"><span class="pre">`Fraction</span></code> &lt;<a class="reference external" href="https://docs.python.org/3.5/library/fractions.html#fractions.Fraction">https://docs.python.org/3.5/library/fractions.html#fractions.Fraction</a>&gt;`__.
+Python also has built-in support for <a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#typesnumeric">complex
+numbers</a>,
+and uses the <code class="docutils literal notranslate"><span class="pre">j</span></code> or <code class="docutils literal notranslate"><span class="pre">J</span></code> suffix to indicate the imaginary part (e.g.
+<code class="docutils literal notranslate"><span class="pre">3+5j</span></code>).</p>
+</div>
+<div class="section" id="strings">
+<h3>Strings<a class="headerlink" href="#strings" title="永久链接至标题">¶</a></h3>
+<p>Besides numbers, Python can also manipulate strings, which can be
+expressed in several ways. They can be enclosed in single quotes
+(<code class="docutils literal notranslate"><span class="pre">'...'</span></code>) or double quotes (<code class="docutils literal notranslate"><span class="pre">&quot;...&quot;</span></code>) with the same result. <code class="docutils literal notranslate"><span class="pre">\</span></code> can
+be used to escape quotes:</p>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;spam eggs&#39;</span>  <span class="c1"># Single quotes.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;spam eggs&#39;</span>
+</pre></div>
+</div>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;doesn</span><span class="se">\&#39;</span><span class="s1">t&#39;</span>  <span class="c1"># Use \&#39; to escape the single quote...</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;doesn&#39;t&quot;</span>
+</pre></div>
+</div>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;doesn&#39;t&quot;</span>  <span class="c1"># ...or use double quotes instead.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;doesn&#39;t&quot;</span>
+</pre></div>
+</div>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;&quot;Yes,&quot; he said.&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;&quot;Yes,&quot; he said.&#39;</span>
+</pre></div>
+</div>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">Yes,</span><span class="se">\&quot;</span><span class="s2"> he said.&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;&quot;Yes,&quot; he said.&#39;</span>
+</pre></div>
+</div>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;&quot;Isn</span><span class="se">\&#39;</span><span class="s1">t,&quot; she said.&#39;</span>
+</pre></div>
+</div>
+<pre class="literal-block">
+'&quot;Isn't,&quot; she said.'
+</pre>
+<p>In the interactive interpreter, the output string is enclosed in quotes
+and special characters are escaped with backslashes. While this might
+sometimes look different from the input (the enclosing quotes could
+change), the two strings are equivalent. The string is enclosed in
+double quotes if the string contains a single quote and no double
+quotes, otherwise it is enclosed in single quotes. The
+<code class="docutils literal notranslate"><span class="pre">`print()</span></code> &lt;<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#print">https://docs.python.org/3.5/library/functions.html#print</a>&gt;`__
+function produces a more readable output, by omitting the enclosing
+quotes and by printing escaped and special characters:</p>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;&quot;Isn</span><span class="se">\&#39;</span><span class="s1">t,&quot; she said.&#39;</span>
+</pre></div>
+</div>
+<pre class="literal-block">
+'&quot;Isn't,&quot; she said.'
+</pre>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&quot;Isn</span><span class="se">\&#39;</span><span class="s1">t,&quot; she said.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Isn&#39;t,&quot;</span> <span class="n">she</span> <span class="n">said</span><span class="o">.</span>
+</pre></div>
+</div>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;First line.</span><span class="se">\n</span><span class="s1">Second line.&#39;</span>  <span class="c1"># \n means newline.</span>
+<span class="n">s</span>  <span class="c1"># Without print(), \n is included in the output.</span>
+</pre></div>
+</div>
+<pre class="literal-block">
+'First line.nSecond line.'
+</pre>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>  <span class="c1"># With print(), \n produces a new line.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">First</span> <span class="n">line</span><span class="o">.</span>
+<span class="n">Second</span> <span class="n">line</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>If you don’t want characters prefaced by <code class="docutils literal notranslate"><span class="pre">\</span></code> to be interpreted as
+special characters, you can use <em>raw strings</em> by adding an <code class="docutils literal notranslate"><span class="pre">r</span></code> before
+the first quote:</p>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C:\some</span><span class="se">\n</span><span class="s1">ame&#39;</span><span class="p">)</span>  <span class="c1"># Here \n means newline!</span>
+</pre></div>
+</div>
+<pre class="literal-block">
+C:some
+ame
+</pre>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;C:\some\name&#39;</span><span class="p">)</span>  <span class="c1"># Note the r before the quote.</span>
+</pre></div>
+</div>
+<pre class="literal-block">
+C:somename
+</pre>
+<p>String literals can span multiple lines. One way is using triple-quotes:
+<code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;...&quot;&quot;&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">'''...'''</span></code>. End of lines are automatically included
+in the string, but it’s possible to prevent this by adding a <code class="docutils literal notranslate"><span class="pre">\</span></code> at
+the end of the line. The following example:</p>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span><span class="se">\</span>
+<span class="s2">Usage: thingy [OPTIONS]</span>
+<span class="s2">     -h                        Display this usage message</span>
+<span class="s2">     -H hostname               Hostname to connect to</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span> <span class="n">thingy</span> <span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span>
+     <span class="o">-</span><span class="n">h</span>                        <span class="n">Display</span> <span class="n">this</span> <span class="n">usage</span> <span class="n">message</span>
+     <span class="o">-</span><span class="n">H</span> <span class="n">hostname</span>               <span class="n">Hostname</span> <span class="n">to</span> <span class="n">connect</span> <span class="n">to</span>
+</pre></div>
+</div>
+<p>Strings can be concatenated (glued together) with the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator,
+and repeated with <code class="docutils literal notranslate"><span class="pre">*</span></code>:</p>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3 times &#39;un&#39;, followed by &#39;ium&#39;</span>
+<span class="mi">3</span> <span class="o">*</span> <span class="s1">&#39;un&#39;</span> <span class="o">+</span> <span class="s1">&#39;ium&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;unununium&#39;</span>
+</pre></div>
+</div>
+<p>Two or more <em>string literals</em> (i.e. the ones enclosed between quotes)
+next to each other are automatically concatenated.</p>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Py&#39;</span> <span class="s1">&#39;thon&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Python&#39;</span>
+</pre></div>
+</div>
+<p>This only works with two literals though, not with variables or
+expressions:</p>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prefix</span> <span class="o">=</span> <span class="s1">&#39;Py&#39;</span>
+<span class="n">prefix</span> <span class="s1">&#39;thon&#39;</span>  <span class="c1"># Can&#39;t concatenate a variable and a string literal.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">File</span> <span class="s2">&quot;&lt;ipython-input-36-6fcf19fbd400&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">2</span>
+    <span class="n">prefix</span> <span class="s1">&#39;thon&#39;</span>  <span class="c1"># Can&#39;t concatenate a variable and a string literal.</span>
+                <span class="o">^</span>
+<span class="ne">SyntaxError</span><span class="p">:</span> <span class="n">invalid</span> <span class="n">syntax</span>
+</pre></div>
+</div>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="s1">&#39;un&#39;</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span> <span class="s1">&#39;ium&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">File</span> <span class="s2">&quot;&lt;ipython-input-37-826b8aeb7d3b&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="p">(</span><span class="s1">&#39;un&#39;</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span> <span class="s1">&#39;ium&#39;</span>
+                   <span class="o">^</span>
+<span class="ne">SyntaxError</span><span class="p">:</span> <span class="n">invalid</span> <span class="n">syntax</span>
+</pre></div>
+</div>
+<p>If you want to concatenate variables or a variable and a literal, use
+<code class="docutils literal notranslate"><span class="pre">+</span></code>:</p>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prefix</span> <span class="o">=</span> <span class="s1">&#39;Py&#39;</span>
+<span class="n">prefix</span> <span class="o">+</span> <span class="s1">&#39;thon&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Python&#39;</span>
+</pre></div>
+</div>
+<p>This feature is particularly useful when you want to break long strings:</p>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Put several strings within parentheses &#39;</span>
+            <span class="s1">&#39;to have them joined together.&#39;</span><span class="p">)</span>
+<span class="n">text</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Put several strings within parentheses to have them joined together.&#39;</span>
+</pre></div>
+</div>
+<p>Strings can be <em>indexed</em> (subscripted), with the first character having
+index 0. There is no separate character type; a character is simply a
+string of size one:</p>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s1">&#39;Python&#39;</span>
+<span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># Character in position 0.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;P&#39;</span>
+</pre></div>
+</div>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">word</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>  <span class="c1"># Character in position 5.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;n&#39;</span>
+</pre></div>
+</div>
+<p>Indices may also be negative numbers, to start counting from the right:</p>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">word</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># Last character.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;n&#39;</span>
+</pre></div>
+</div>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">word</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># Second-last character.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;o&#39;</span>
+</pre></div>
+</div>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">word</span><span class="p">[</span><span class="o">-</span><span class="mi">6</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;P&#39;</span>
+</pre></div>
+</div>
+<p>Note that since -0 is the same as 0, negative indices start from -1.</p>
+<p>In addition to indexing, <em>slicing</em> is also supported. While indexing is
+used to obtain individual characters, slicing allows you to obtain
+substring:</p>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># Characters from position 0 (included) to 2 (excluded).</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Py&#39;</span>
+</pre></div>
+</div>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">word</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>  <span class="c1"># Characters from position 2 (included) to 5 (excluded).</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;tho&#39;</span>
+</pre></div>
+</div>
+<p>Note how the start is always included, and the end always excluded. This
+makes sure that <code class="docutils literal notranslate"><span class="pre">s[:i]</span> <span class="pre">+</span> <span class="pre">s[i:]</span></code> is always equal to <code class="docutils literal notranslate"><span class="pre">s</span></code>:</p>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">word</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">word</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Python&#39;</span>
+</pre></div>
+</div>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">word</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span> <span class="o">+</span> <span class="n">word</span><span class="p">[</span><span class="mi">4</span><span class="p">:]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Python&#39;</span>
+</pre></div>
+</div>
+<p>Slice indices have useful defaults; an omitted first index defaults to
+zero, an omitted second index defaults to the size of the string being
+sliced.</p>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">word</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># Character from the beginning to position 2 (excluded).</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Py&#39;</span>
+</pre></div>
+</div>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">word</span><span class="p">[</span><span class="mi">4</span><span class="p">:]</span>  <span class="c1"># Characters from position 4 (included) to the end.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;on&#39;</span>
+</pre></div>
+</div>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">word</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span> <span class="c1"># Characters from the second-last (included) to the end.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;on&#39;</span>
+</pre></div>
+</div>
+<p>One way to remember how slices work is to think of the indices as
+pointing between characters, with the left edge of the first character
+numbered 0. Then the right edge of the last character of a string of <em>n</em>
+characters has index <em>n</em>, for example:</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>P</td>
+<td>y</td>
+<td>t</td>
+<td>h</td>
+<td>o</td>
+<td>n</td>
+</tr>
+</tbody>
+</table>
+<p>0   1   2   3   4   5   6</p>
+</div></blockquote>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-6</span></kbd></td>
+<td><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-5</span></kbd></td>
+<td><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-4</span></kbd></td>
+<td><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-3</span></kbd></td>
+<td><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-2</span></kbd></td>
+<td>-1</td></tr>
+</tbody>
+</table>
+</td></tr>
+</tbody>
+</table>
+</td></tr>
+</tbody>
+</table>
+</td></tr>
+</tbody>
+</table>
+</td></tr>
+</tbody>
+</table>
+<p>The first row of numbers gives the position of the indices 0…6 in the
+string; the second row gives the corresponding negative indices. The
+slice from <em>i</em> to <em>j</em> consists of all characters between the edges
+labeled <em>i</em> and <em>j</em>, respectively.</p>
+<p>For non-negative indices, the length of a slice is the difference of the
+indices, if both are within bounds. For example, the length of
+<code class="docutils literal notranslate"><span class="pre">word[1:3]</span></code> is 2.</p>
+<p>Attempting to use an index that is too large will result in an error:</p>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">word</span><span class="p">[</span><span class="mi">42</span><span class="p">]</span>  <span class="c1"># The word only has 6 characters.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">---------------------------------------------------------------------------</span>
+
+<span class="ne">IndexError</span>                                <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">52</span><span class="o">-</span><span class="mi">80</span><span class="n">def1e3ff80</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span><span class="p">()</span>
+<span class="o">----&gt;</span> <span class="mi">1</span> <span class="n">word</span><span class="p">[</span><span class="mi">42</span><span class="p">]</span>  <span class="c1"># The word only has 6 characters.</span>
+
+
+<span class="ne">IndexError</span><span class="p">:</span> <span class="n">string</span> <span class="n">index</span> <span class="n">out</span> <span class="n">of</span> <span class="nb">range</span>
+</pre></div>
+</div>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">word</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">42</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;on&#39;</span>
+</pre></div>
+</div>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">word</span><span class="p">[</span><span class="mi">42</span><span class="p">:]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;&#39;</span>
+</pre></div>
+</div>
+<p>Python strings cannot be changed, they are
+<a class="reference external" href="https://docs.python.org/3.5/glossary.html#term-immutable">immutable</a>.
+Therefore, assigning to an indexed position in the string results in an
+error:</p>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;J&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">---------------------------------------------------------------------------</span>
+
+<span class="ne">TypeError</span>                                 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">55</span><span class="o">-</span><span class="mi">197</span><span class="n">b67ffdd83</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span><span class="p">()</span>
+<span class="o">----&gt;</span> <span class="mi">1</span> <span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;J&#39;</span>
+
+
+<span class="ne">TypeError</span><span class="p">:</span> <span class="s1">&#39;str&#39;</span> <span class="nb">object</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">support</span> <span class="n">item</span> <span class="n">assignment</span>
+</pre></div>
+</div>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">word</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span> <span class="o">=</span> <span class="s1">&#39;py&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">---------------------------------------------------------------------------</span>
+
+<span class="ne">TypeError</span>                                 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">56</span><span class="o">-</span><span class="mi">0786521</span><span class="n">edfdd</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span><span class="p">()</span>
+<span class="o">----&gt;</span> <span class="mi">1</span> <span class="n">word</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span> <span class="o">=</span> <span class="s1">&#39;py&#39;</span>
+
+
+<span class="ne">TypeError</span><span class="p">:</span> <span class="s1">&#39;str&#39;</span> <span class="nb">object</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">support</span> <span class="n">item</span> <span class="n">assignment</span>
+</pre></div>
+</div>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;J&#39;</span> <span class="o">+</span> <span class="n">word</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Jython&#39;</span>
+</pre></div>
+</div>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">word</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;Py&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;PyPy&#39;</span>
+</pre></div>
+</div>
+<p>The built-in function
+<code class="docutils literal notranslate"><span class="pre">`len()</span></code> &lt;<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#len">https://docs.python.org/3.5/library/functions.html#len</a>&gt;`__
+returns the length of a string:</p>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;supercalifragilisticexpialidocious&#39;</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">34</span>
+</pre></div>
+</div>
+<p>See also:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#textseq">Text Sequence Type
+str</a>:
+Strings are examples of <em>sequence types</em>, and support the common
+operations supported by such types.</li>
+<li><a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#string-methods">String
+Methods</a>:
+Strings support a large number of methods for basic transformations
+and searching.</li>
+<li><a class="reference external" href="https://docs.python.org/3.5/library/string.html#formatstrings">Format String
+Syntax</a>:
+Information about string formatting with
+<code class="docutils literal notranslate"><span class="pre">`str.format()</span></code> &lt;<a class="reference external" href="https://docs.python.org/3.5/library/string.html#formatstrings">https://docs.python.org/3.5/library/string.html#formatstrings</a>&gt;`__.</li>
+<li><code class="docutils literal notranslate"><span class="pre">`printf</span></code>-style String
+Formatting &lt;<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#old-string-formatting">https://docs.python.org/3.5/library/stdtypes.html#old-string-formatting</a>&gt;`__:
+The old formatting operations invoked when strings and Unicode
+strings are the left operand of the <code class="docutils literal notranslate"><span class="pre">%</span></code> operator.</li>
+</ul>
+</div>
+<div class="section" id="lists">
+<h3>Lists<a class="headerlink" href="#lists" title="永久链接至标题">¶</a></h3>
+<p>Python knows a number of <em>compound</em> data types, used to group together
+other values. The most versatile is the
+<a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#typesseq-list">*list*</a>,
+which can be written as a list of comma-separated values (items) between
+square brackets. Lists might contain items of different types, but
+usually the items all have the same type.</p>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
+<span class="n">squares</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Like strings (and all other built-in
+<a class="reference external" href="https://docs.python.org/3.5/glossary.html#term-sequence">sequence</a>
+type), lists can be indexed and sliced:</p>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># Indexing returns the item.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span>
+</pre></div>
+</div>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">25</span>
+</pre></div>
+</div>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span>  <span class="c1"># Slicing returns a new list.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>All slice operations return a new list containing the requested
+elements. This means that the following slice returns a new (shallow)
+copy of the list:</p>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span><span class="p">[:]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Lists also support operations like concatenation:</p>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">+</span> <span class="p">[</span><span class="mi">36</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Unlike strings, which are
+<a class="reference external" href="https://docs.python.org/3.5/glossary.html#term-immutable">immutable</a>,
+lists are a
+<a class="reference external" href="https://docs.python.org/3.5/glossary.html#term-mutable">mutable</a>
+type, i.e. it is possible to change their content:</p>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cubes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">125</span><span class="p">]</span>  <span class="c1"># Something&#39;s wrong here ...</span>
+<span class="mi">4</span> <span class="o">**</span> <span class="mi">3</span>  <span class="c1"># the cube of 4 is 64, not 65!</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">64</span>
+</pre></div>
+</div>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cubes</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">64</span>  <span class="c1"># Replace the wrong value.</span>
+<span class="n">cubes</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">125</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>You can also add new items at the end of the list, by using the
+<code class="docutils literal notranslate"><span class="pre">append()</span></code> method (we will see more about methods later):</p>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cubes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">216</span><span class="p">)</span>  <span class="c1"># Add the cube of 6 ...</span>
+<span class="n">cubes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">7</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># and the cube of 7.</span>
+<span class="n">cubes</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="mi">216</span><span class="p">,</span> <span class="mi">343</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Assignment to slices is also possible, and this can even change the size
+of the list or clear it entirely:</p>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">letters</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">]</span>
+<span class="n">letters</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Replace some values.</span>
+<span class="n">letters</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">]</span>
+<span class="n">letters</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now remove them.</span>
+<span class="n">letters</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">letters</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clear the list by replacing all the elements with an empty list.</span>
+<span class="n">letters</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">letters</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[]</span>
+</pre></div>
+</div>
+<p>The built-in function
+<code class="docutils literal notranslate"><span class="pre">`len()</span></code> &lt;<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#len">https://docs.python.org/3.5/library/functions.html#len</a>&gt;`__
+also applies to lists:</p>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">letters</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">letters</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span>
+</pre></div>
+</div>
+<p>It is possible to nest lists (create lists containing other lists), for
+example:</p>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
+<span class="n">n</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="p">]</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
+</pre></div>
+</div>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;b&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="first-steps-towards-programming">
+<h2>5.2. First Steps Towards Programming<a class="headerlink" href="#first-steps-towards-programming" title="永久链接至标题">¶</a></h2>
+<p>Of course, we can use Python for more complicated tasks than adding two
+and two together. For instance, we can write an initial sub-sequence of
+the Fibonacci series as follows:</p>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fibonacci series:</span>
+<span class="c1"># the sum of two elements defines the next.</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">b</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span>
+<span class="mi">1</span>
+<span class="mi">2</span>
+<span class="mi">3</span>
+<span class="mi">5</span>
+<span class="mi">8</span>
+</pre></div>
+</div>
+<p>This example introduces several new features.</p>
+<ul class="simple">
+<li>The first line contains a <em>multiple assignment</em>: the variables <code class="docutils literal notranslate"><span class="pre">a</span></code>
+and <code class="docutils literal notranslate"><span class="pre">b</span></code> simultaneously get the new values 0 and 1. On the last line
+this is used again, demonstrating that the expressions on the
+right-hand side are all evaluated first before any of the assignments
+take place. The right-hand side expressions are evaluated from the
+left to the right.</li>
+<li>The
+<code class="docutils literal notranslate"><span class="pre">`while</span></code> &lt;<a class="reference external" href="https://docs.python.org/3.5/reference/compound_stmts.html#while">https://docs.python.org/3.5/reference/compound_stmts.html#while</a>&gt;`__
+loop executes as long as the condition (here: <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">&amp;lt;</span> <span class="pre">10</span></code>) remains
+true. In Python, like in C, any non-zero integer value is true; zero
+is false. The condition may also be a string or list value, in fact
+any sequence; anything with a non-zero length is true, empty
+sequences are false. The test used in the example is a simple
+comparison. The standard comparison operators are written the same as
+in C: <code class="docutils literal notranslate"><span class="pre">&amp;lt;</span></code> (less than), <code class="docutils literal notranslate"><span class="pre">&amp;gt;</span></code> (greater than), <code class="docutils literal notranslate"><span class="pre">==</span></code> (equal
+to), <code class="docutils literal notranslate"><span class="pre">&amp;lt;=</span></code> (less than or equal to), <code class="docutils literal notranslate"><span class="pre">&amp;gt;=</span></code> (greater than or
+equal to) and <code class="docutils literal notranslate"><span class="pre">!=</span></code> (not equal to).</li>
+<li>The <em>body</em> of the loop is <em>indented</em>: indentation is Python’s way of
+grouping statements. At the interactive prompt, you have to type a
+tab or space(s) for each indented line. In practice you will prepare
+more complicated input for Python with a text editor; all decent text
+editors have an auto-indent facility. When a compound statement is
+entered interactively, it must be followed by a blank line to
+indicate completion (since the parser cannot guess when you have
+typed the last line). Note that each line within a basic block must
+be indented by the same amount.</li>
+<li>The
+<code class="docutils literal notranslate"><span class="pre">`print()</span></code> &lt;<a class="reference external" href="https://docs.python.org/3.5/library/functions.html#print">https://docs.python.org/3.5/library/functions.html#print</a>&gt;`__
+function writes the value of the argument(s) it is given. It differs
+from just writing the expression you want to write (as we did earlier
+in the calculator examples) in the way it handles multiple arguments,
+floating point quantities, and strings. Strings are printed without
+quotes, and a space is inserted between items, so you can format
+things nicely, like this:</li>
+</ul>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">256</span><span class="o">*</span><span class="mi">256</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The value of i is&#39;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">value</span> <span class="n">of</span> <span class="n">i</span> <span class="ow">is</span> <span class="mi">65536</span>
+</pre></div>
+</div>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span>
+</pre></div>
+</div>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">eval</span><span class="p">(</span><span class="s2">&quot;333/3334&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">0.09988002399520096</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="04_matplotlib.html" class="btn btn-neutral" title="4. 绘图" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, zeping.Long.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'zh_CN',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

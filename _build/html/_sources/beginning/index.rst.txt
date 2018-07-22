@@ -9,6 +9,8 @@
    :caption: 目录:
 
    01_linux
+   readme.md
    02_jupyter
    03_numpy
    04_matplotlib
+   Python
